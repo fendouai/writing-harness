@@ -32,7 +32,7 @@ Retries help reliability only when you are selective about what you retry. A tim
 
 
 Write valid JSON to:
-/Users/f/GitHub/humanize-text-guide/runs/judge-input-vs-codex-sample/results/technical-explainer.json
+/Users/f/GitHub/writing-harness/runs/judge-input-vs-codex-sample/results/technical-explainer.json
 
 Required JSON keys:
 - winner: "left" | "right" | "tie"

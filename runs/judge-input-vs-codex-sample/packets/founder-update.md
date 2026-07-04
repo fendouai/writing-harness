@@ -35,7 +35,7 @@ Customer conversations this week clarified one issue faster than any dashboard c
 
 
 Write valid JSON to:
-/Users/f/GitHub/humanize-text-guide/runs/judge-input-vs-codex-sample/results/founder-update.json
+/Users/f/GitHub/writing-harness/runs/judge-input-vs-codex-sample/results/founder-update.json
 
 Required JSON keys:
 - winner: "left" | "right" | "tie"

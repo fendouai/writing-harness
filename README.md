@@ -109,12 +109,12 @@ This repository has two main parts:
 
 1. `README.md`
    The guide and operating philosophy.
-2. [`skills/writing-harness/SKILL.md`](/Users/f/GitHub/humanize-text-guide/skills/writing-harness/SKILL.md)
+2. [`skills/writing-harness/SKILL.md`](/Users/f/GitHub/writing-harness/skills/writing-harness/SKILL.md)
    The reusable agent skill.
 
-It also includes an evaluation layer under [`evals/`](/Users/f/GitHub/humanize-text-guide/evals/), including an end-to-end benchmark suite for testing rewrite quality.
+It also includes an evaluation layer under [`evals/`](/Users/f/GitHub/writing-harness/evals/), including an end-to-end benchmark suite for testing rewrite quality.
 
-The skill stays intentionally compact. The deeper operational knowledge lives in [`skills/writing-harness/references/`](/Users/f/GitHub/humanize-text-guide/skills/writing-harness/references/).
+The skill stays intentionally compact. The deeper operational knowledge lives in [`skills/writing-harness/references/`](/Users/f/GitHub/writing-harness/skills/writing-harness/references/).
 
 This follows a harness-first documentation rule:
 
@@ -402,8 +402,8 @@ The repository includes two test layers:
 
 Start here:
 
-- [`evals/README.md`](/Users/f/GitHub/humanize-text-guide/evals/README.md)
-- [`evals/benchmarks/README.md`](/Users/f/GitHub/humanize-text-guide/evals/benchmarks/README.md)
+- [`evals/README.md`](/Users/f/GitHub/writing-harness/evals/README.md)
+- [`evals/benchmarks/README.md`](/Users/f/GitHub/writing-harness/evals/benchmarks/README.md)
 
 ## Sources and Inspiration
 

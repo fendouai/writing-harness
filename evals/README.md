@@ -148,4 +148,4 @@ It adds:
 - agent-native benchmark packets
 - agent-native pairwise judge packets
 
-See [`evals/benchmarks/README.md`](/Users/f/GitHub/humanize-text-guide/evals/benchmarks/README.md).
+See [`evals/benchmarks/README.md`](/Users/f/GitHub/writing-harness/evals/benchmarks/README.md).

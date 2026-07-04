@@ -37,7 +37,7 @@ Suggested weak patterns to reduce:
 - users are excited
 
 Write the final rewrite to:
-/Users/f/GitHub/humanize-text-guide/runs/native-benchmark-demo/results/founder-update.md
+/Users/f/GitHub/writing-harness/runs/native-benchmark-demo/results/founder-update.md
 
 Draft:
 We had a productive week and learned a lot from customer conversations. Users are excited about the product direction, and we see strong opportunities to improve the onboarding experience and pricing communication. Going forward, we will continue iterating thoughtfully based on feedback.

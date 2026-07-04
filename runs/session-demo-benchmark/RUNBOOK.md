@@ -8,9 +8,9 @@ Process every benchmark packet with the Writing Harness skill and write one fina
 
 ## Session Files
 
-- Manifest: /Users/f/GitHub/humanize-text-guide/runs/session-demo-benchmark/run-manifest.json
-- Packets directory: /Users/f/GitHub/humanize-text-guide/runs/session-demo-benchmark/packets
-- Results directory: /Users/f/GitHub/humanize-text-guide/runs/session-demo-benchmark/results
+- Manifest: /Users/f/GitHub/writing-harness/runs/session-demo-benchmark/run-manifest.json
+- Packets directory: /Users/f/GitHub/writing-harness/runs/session-demo-benchmark/packets
+- Results directory: /Users/f/GitHub/writing-harness/runs/session-demo-benchmark/results
 
 ## Instructions For The Agent
 
@@ -28,6 +28,6 @@ Process every benchmark packet with the Writing Harness skill and write one fina
 ## Suggested user message
 
 Use the Writing Harness skill and complete the benchmark session described in:
-/Users/f/GitHub/humanize-text-guide/runs/session-demo-benchmark/RUNBOOK.md
+/Users/f/GitHub/writing-harness/runs/session-demo-benchmark/RUNBOOK.md
 
-Make sure every packet in /Users/f/GitHub/humanize-text-guide/runs/session-demo-benchmark/packets is processed and every output is written into /Users/f/GitHub/humanize-text-guide/runs/session-demo-benchmark/results.
+Make sure every packet in /Users/f/GitHub/writing-harness/runs/session-demo-benchmark/packets is processed and every output is written into /Users/f/GitHub/writing-harness/runs/session-demo-benchmark/results.

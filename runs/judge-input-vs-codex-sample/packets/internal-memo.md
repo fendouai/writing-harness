@@ -34,7 +34,7 @@ We should keep the engineering handbook and runbooks in Markdown in the reposito
 
 
 Write valid JSON to:
-/Users/f/GitHub/humanize-text-guide/runs/judge-input-vs-codex-sample/results/internal-memo.json
+/Users/f/GitHub/writing-harness/runs/judge-input-vs-codex-sample/results/internal-memo.json
 
 Required JSON keys:
 - winner: "left" | "right" | "tie"

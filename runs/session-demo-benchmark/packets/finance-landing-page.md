@@ -38,7 +38,7 @@ Suggested weak patterns to reduce:
 - organization
 
 Write the final rewrite to:
-/Users/f/GitHub/humanize-text-guide/runs/session-demo-benchmark/results/finance-landing-page.md
+/Users/f/GitHub/writing-harness/runs/session-demo-benchmark/results/finance-landing-page.md
 
 Draft:
 Our innovative platform empowers finance teams to transform their close process with seamless automation and world-class visibility. It integrates with your ERP and spreadsheets to unlock efficiency, reduce friction, and drive strategic outcomes across the organization.

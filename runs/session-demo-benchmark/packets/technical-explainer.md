@@ -35,7 +35,7 @@ Suggested weak patterns to reduce:
 - pros and cons
 
 Write the final rewrite to:
-/Users/f/GitHub/humanize-text-guide/runs/session-demo-benchmark/results/technical-explainer.md
+/Users/f/GitHub/writing-harness/runs/session-demo-benchmark/results/technical-explainer.md
 
 Draft:
 It is important to note that retries can improve reliability in modern systems. In today's fast-paced digital environment, organizations should implement retries to ensure robust performance and a seamless user experience. Different retry strategies have different pros and cons, so teams should evaluate their options carefully.

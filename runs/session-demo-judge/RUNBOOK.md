@@ -8,9 +8,9 @@ Process every judge packet and write one valid JSON judgment per case.
 
 ## Session Files
 
-- Manifest: /Users/f/GitHub/humanize-text-guide/runs/session-demo-judge/judge-manifest.json
-- Packets directory: /Users/f/GitHub/humanize-text-guide/runs/session-demo-judge/packets
-- Results directory: /Users/f/GitHub/humanize-text-guide/runs/session-demo-judge/results
+- Manifest: /Users/f/GitHub/writing-harness/runs/session-demo-judge/judge-manifest.json
+- Packets directory: /Users/f/GitHub/writing-harness/runs/session-demo-judge/packets
+- Results directory: /Users/f/GitHub/writing-harness/runs/session-demo-judge/results
 
 ## Instructions For The Agent
 
@@ -27,6 +27,6 @@ Process every judge packet and write one valid JSON judgment per case.
 ## Suggested user message
 
 Complete the pairwise Writing Harness judge session described in:
-/Users/f/GitHub/humanize-text-guide/runs/session-demo-judge/RUNBOOK.md
+/Users/f/GitHub/writing-harness/runs/session-demo-judge/RUNBOOK.md
 
-Make sure every packet in /Users/f/GitHub/humanize-text-guide/runs/session-demo-judge/packets is processed and every JSON result is written into /Users/f/GitHub/humanize-text-guide/runs/session-demo-judge/results.
+Make sure every packet in /Users/f/GitHub/writing-harness/runs/session-demo-judge/packets is processed and every JSON result is written into /Users/f/GitHub/writing-harness/runs/session-demo-judge/results.

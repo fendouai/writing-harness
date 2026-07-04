@@ -35,7 +35,7 @@ Finance teams do not need more “visibility.” They need a close process that 
 
 
 Write valid JSON to:
-/Users/f/GitHub/humanize-text-guide/runs/session-demo-judge/results/finance-landing-page.json
+/Users/f/GitHub/writing-harness/runs/session-demo-judge/results/finance-landing-page.json
 
 Required JSON keys:
 - winner: "left" | "right" | "tie"

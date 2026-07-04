@@ -37,7 +37,7 @@ Suggested weak patterns to reduce:
 - decision
 
 Write the final rewrite to:
-/Users/f/GitHub/humanize-text-guide/runs/session-demo-benchmark/results/internal-memo.md
+/Users/f/GitHub/writing-harness/runs/session-demo-benchmark/results/internal-memo.md
 
 Draft:
 There are several valid options for where we keep our engineering handbook and runbooks. Notion is familiar to more teams, while Markdown in the repository has advantages for version control and discoverability. Both approaches offer benefits, and we should consider tradeoffs carefully before making a final decision.
