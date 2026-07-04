@@ -1,0 +1,66 @@
+<svg width="1200" height="780" viewBox="0 0 1200 780" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="120" y1="50" x2="1080" y2="730" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF9F2"/>
+      <stop offset="1" stop-color="#F3F8F6"/>
+    </linearGradient>
+    <filter id="softShadow" x="0" y="0" width="1200" height="780" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#12263F" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="780" rx="28" fill="url(#bg2)"/>
+  <text x="80" y="96" fill="#10233F" font-family="Georgia, 'Times New Roman', serif" font-size="40" font-weight="700">Core Features At A Glance</text>
+  <text x="80" y="132" fill="#43536B" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="20">A practical loop for better drafts, better review, and better iteration.</text>
+
+  <g filter="url(#softShadow)">
+    <rect x="70" y="190" width="250" height="210" rx="26" fill="#FFF3E4"/>
+    <rect x="345" y="190" width="250" height="210" rx="26" fill="#E8F6F1"/>
+    <rect x="620" y="190" width="250" height="210" rx="26" fill="#EAF1FB"/>
+    <rect x="895" y="190" width="250" height="210" rx="26" fill="#F4ECE8"/>
+
+    <rect x="70" y="445" width="250" height="210" rx="26" fill="#FDEBD3"/>
+    <rect x="345" y="445" width="250" height="210" rx="26" fill="#DCF3EC"/>
+    <rect x="620" y="445" width="250" height="210" rx="26" fill="#DFEAFB"/>
+    <rect x="895" y="445" width="250" height="210" rx="26" fill="#F8F2EE"/>
+  </g>
+
+  <text x="100" y="250" fill="#A64B00" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="20" font-weight="700">1. Writing spec</text>
+  <text x="100" y="285" fill="#49392B" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="18">Define audience, task,</text>
+  <text x="100" y="311" fill="#49392B" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="18">constraints, and desired</text>
+  <text x="100" y="337" fill="#49392B" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="18">level of conviction.</text>
+
+  <text x="375" y="250" fill="#0E5B52" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="20" font-weight="700">2. Thesis and rewrite</text>
+  <text x="375" y="285" fill="#22403C" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="18">Sharpen the claim.</text>
+  <text x="375" y="311" fill="#22403C" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="18">Increase specificity.</text>
+  <text x="375" y="337" fill="#22403C" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="18">Make judgment visible.</text>
+
+  <text x="650" y="250" fill="#194E92" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="20" font-weight="700">3. Quality sensors</text>
+  <text x="650" y="285" fill="#24374E" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="18">Rubric, failure taxonomy,</text>
+  <text x="650" y="311" fill="#24374E" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="18">and authorship checks.</text>
+  <text x="650" y="337" fill="#24374E" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="18">Fluency is not enough.</text>
+
+  <text x="925" y="250" fill="#83583E" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="20" font-weight="700">4. Benchmarks</text>
+  <text x="925" y="285" fill="#4A3D36" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="18">Candidate runs, scoring,</text>
+  <text x="925" y="311" fill="#4A3D36" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="18">judge packets, and</text>
+  <text x="925" y="337" fill="#4A3D36" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="18">regression tracking.</text>
+
+  <text x="100" y="505" fill="#A64B00" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="20" font-weight="700">Reusable workflow</text>
+  <text x="100" y="540" fill="#49392B" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="18">Not just a prompt.</text>
+  <text x="100" y="566" fill="#49392B" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="18">A repeatable system.</text>
+
+  <text x="375" y="505" fill="#0E5B52" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="20" font-weight="700">Clearer decisions</text>
+  <text x="375" y="540" fill="#22403C" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="18">Prioritize what matters.</text>
+  <text x="375" y="566" fill="#22403C" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="18">Reduce vague balance.</text>
+
+  <text x="650" y="505" fill="#194E92" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="20" font-weight="700">Easier to trust</text>
+  <text x="650" y="540" fill="#24374E" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="18">Specific, judged,</text>
+  <text x="650" y="566" fill="#24374E" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="18">and easier to ship.</text>
+
+  <text x="925" y="505" fill="#83583E" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="20" font-weight="700">Easier to improve</text>
+  <text x="925" y="540" fill="#4A3D36" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="18">The benchmark loop</text>
+  <text x="925" y="566" fill="#4A3D36" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="18">creates feedback over time.</text>
+
+  <path d="M320 295H345" stroke="#C08A59" stroke-width="4" stroke-linecap="round"/>
+  <path d="M595 295H620" stroke="#6EA79A" stroke-width="4" stroke-linecap="round"/>
+  <path d="M870 295H895" stroke="#6F90BE" stroke-width="4" stroke-linecap="round"/>
+</svg>

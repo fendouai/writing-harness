@@ -1,0 +1,62 @@
+[
+  {
+    "id": "technical-explainer",
+    "title": "Technical Explainer Rewrite",
+    "surface": "engineering blog paragraph",
+    "audience": "backend engineers",
+    "task": "Rewrite the paragraph so it is precise, useful, and technically credible.",
+    "input_text": "It is important to note that retries can improve reliability in modern systems. In today's fast-paced digital environment, organizations should implement retries to ensure robust performance and a seamless user experience. Different retry strategies have different pros and cons, so teams should evaluate their options carefully.",
+    "target_words": {"min": 55, "max": 120},
+    "preserve_facts_all": ["retries", "reliability"],
+    "strengthen_with_any": ["timeout", "429", "backoff", "idempotent", "idempotency key"],
+    "avoid_phrases": ["it is important to note", "in today's fast-paced", "seamless user experience"],
+    "reduce_phrases": ["different", "organizations should", "pros and cons"],
+    "judgment_markers_any": ["but", "if", "when", "only", "instead"],
+    "specificity_markers_any": ["timeout", "429", "POST", "GET", "idempotent", "backoff"]
+  },
+  {
+    "id": "finance-landing-page",
+    "title": "Finance Landing Page Rewrite",
+    "surface": "landing page copy",
+    "audience": "finance teams",
+    "task": "Rewrite the copy so it sounds like it understands the real close process instead of sounding like generic B2B software marketing.",
+    "input_text": "Our innovative platform empowers finance teams to transform their close process with seamless automation and world-class visibility. It integrates with your ERP and spreadsheets to unlock efficiency, reduce friction, and drive strategic outcomes across the organization.",
+    "target_words": {"min": 40, "max": 100},
+    "preserve_facts_all": ["finance teams", "ERP", "spreadsheets"],
+    "strengthen_with_any": ["close", "month-end", "reconcile", "spreadsheet", "approval"],
+    "avoid_phrases": ["innovative platform", "empowers", "seamless automation", "world-class visibility", "strategic outcomes"],
+    "reduce_phrases": ["efficiency", "friction", "organization"],
+    "judgment_markers_any": ["not", "instead", "when", "if"],
+    "specificity_markers_any": ["month-end", "close", "reconcile", "approval", "ERP", "spreadsheet"]
+  },
+  {
+    "id": "internal-memo",
+    "title": "Internal Memo Rewrite",
+    "surface": "internal memo",
+    "audience": "engineering leadership",
+    "task": "Rewrite the memo so it makes a recommendation instead of hiding behind balance.",
+    "input_text": "There are several valid options for where we keep our engineering handbook and runbooks. Notion is familiar to more teams, while Markdown in the repository has advantages for version control and discoverability. Both approaches offer benefits, and we should consider tradeoffs carefully before making a final decision.",
+    "target_words": {"min": 55, "max": 130},
+    "preserve_facts_all": ["engineering handbook", "runbooks", "Notion", "Markdown"],
+    "strengthen_with_any": ["recommend", "repo", "version control", "discoverability", "source of truth"],
+    "avoid_phrases": ["several valid options", "offer benefits", "consider tradeoffs carefully"],
+    "reduce_phrases": ["both", "benefits", "decision"],
+    "judgment_markers_any": ["should", "because", "instead", "if"],
+    "specificity_markers_any": ["source of truth", "version control", "repository", "runbooks"]
+  },
+  {
+    "id": "founder-update",
+    "title": "Founder Update Rewrite",
+    "surface": "founder note",
+    "audience": "startup team and early investors",
+    "task": "Rewrite the update so it sounds observed and decisive, not polished and empty.",
+    "input_text": "We had a productive week and learned a lot from customer conversations. Users are excited about the product direction, and we see strong opportunities to improve the onboarding experience and pricing communication. Going forward, we will continue iterating thoughtfully based on feedback.",
+    "target_words": {"min": 50, "max": 120},
+    "preserve_facts_all": ["customer", "onboarding", "pricing"],
+    "strengthen_with_any": ["five interviews", "confusion", "self-serve", "drop-off", "sign-up"],
+    "avoid_phrases": ["productive week", "learned a lot", "product direction", "strong opportunities", "iterating thoughtfully"],
+    "reduce_phrases": ["feedback", "users are excited"],
+    "judgment_markers_any": ["but", "so", "because", "next"],
+    "specificity_markers_any": ["five", "sign-up", "drop-off", "pricing", "onboarding"]
+  }
+]

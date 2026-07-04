@@ -1,0 +1,115 @@
+{
+  "summary": {
+    "passed": 16,
+    "total": 16,
+    "pass_rate": 100.0,
+    "by_suite": {
+      "artifact": {
+        "passed": 12,
+        "total": 12
+      },
+      "coverage": {
+        "passed": 4,
+        "total": 4
+      }
+    }
+  },
+  "results": [
+    {
+      "suite": "artifact",
+      "name": "file-exists:README.md",
+      "passed": true,
+      "detail": "exists"
+    },
+    {
+      "suite": "artifact",
+      "name": "file-exists:skills/writing-harness/SKILL.md",
+      "passed": true,
+      "detail": "exists"
+    },
+    {
+      "suite": "artifact",
+      "name": "file-exists:skills/writing-harness/references/rewrite-workflow.md",
+      "passed": true,
+      "detail": "exists"
+    },
+    {
+      "suite": "artifact",
+      "name": "file-exists:skills/writing-harness/references/rubric.md",
+      "passed": true,
+      "detail": "exists"
+    },
+    {
+      "suite": "artifact",
+      "name": "file-exists:skills/writing-harness/references/failure-taxonomy.md",
+      "passed": true,
+      "detail": "exists"
+    },
+    {
+      "suite": "artifact",
+      "name": "file-exists:skills/writing-harness/references/prompt-templates.md",
+      "passed": true,
+      "detail": "exists"
+    },
+    {
+      "suite": "artifact",
+      "name": "readme-core-sections",
+      "passed": true,
+      "detail": "all sections present"
+    },
+    {
+      "suite": "artifact",
+      "name": "skill-core-sections",
+      "passed": true,
+      "detail": "all sections present"
+    },
+    {
+      "suite": "artifact",
+      "name": "rubric-dimensions",
+      "passed": true,
+      "detail": "10 dimensions present"
+    },
+    {
+      "suite": "artifact",
+      "name": "failure-taxonomy-tags",
+      "passed": true,
+      "detail": "all failure tags present"
+    },
+    {
+      "suite": "artifact",
+      "name": "prompt-template-groups",
+      "passed": true,
+      "detail": "template groups present"
+    },
+    {
+      "suite": "artifact",
+      "name": "skill-entrypoint-compactness",
+      "passed": true,
+      "detail": "218 lines"
+    },
+    {
+      "suite": "coverage",
+      "name": "generic-blog-rewrite",
+      "passed": true,
+      "detail": "The harness should diagnose a generic AI-sounding article and prescribe a stronger rewrite path."
+    },
+    {
+      "suite": "coverage",
+      "name": "prompt-upgrade-request",
+      "passed": true,
+      "detail": "The harness should support converting vague humanization requests into authored-quality prompts."
+    },
+    {
+      "suite": "coverage",
+      "name": "harness-review-mode",
+      "passed": true,
+      "detail": "The harness should support a review mode that returns diagnosis and next-pass recommendations, not just a rewrite."
+    },
+    {
+      "suite": "coverage",
+      "name": "reference-loading-discipline",
+      "passed": true,
+      "detail": "The harness should behave like a real harness: short entrypoint, deeper structured references."
+    }
+  ]
+}

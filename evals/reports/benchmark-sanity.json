@@ -1,0 +1,409 @@
+{
+  "mode": "sanity",
+  "gold": [
+    {
+      "case_id": "technical-explainer",
+      "mode": "gold",
+      "score": 100.0,
+      "max_score": 100,
+      "metrics": [
+        {
+          "name": "word_count_fit",
+          "points": 10,
+          "earned": 10,
+          "detail": "59 words"
+        },
+        {
+          "name": "fact_preservation",
+          "points": 20,
+          "earned": 20.0,
+          "detail": "2/2 preserved"
+        },
+        {
+          "name": "strengthening_signals",
+          "points": 20,
+          "earned": 20.0,
+          "detail": "5 strengthening signals"
+        },
+        {
+          "name": "banned_phrase_removal",
+          "points": 15,
+          "earned": 15.0,
+          "detail": "0 banned phrases present"
+        },
+        {
+          "name": "weak_pattern_reduction",
+          "points": 15,
+          "earned": 15.0,
+          "detail": "3/3 reduced"
+        },
+        {
+          "name": "judgment_markers",
+          "points": 10,
+          "earned": 10,
+          "detail": "3 judgment markers"
+        },
+        {
+          "name": "specificity_markers",
+          "points": 10,
+          "earned": 10.0,
+          "detail": "4 specificity markers"
+        }
+      ]
+    },
+    {
+      "case_id": "finance-landing-page",
+      "mode": "gold",
+      "score": 93.33,
+      "max_score": 100,
+      "metrics": [
+        {
+          "name": "word_count_fit",
+          "points": 10,
+          "earned": 10,
+          "detail": "53 words"
+        },
+        {
+          "name": "fact_preservation",
+          "points": 20,
+          "earned": 13.333333333333332,
+          "detail": "2/3 preserved"
+        },
+        {
+          "name": "strengthening_signals",
+          "points": 20,
+          "earned": 20.0,
+          "detail": "5 strengthening signals"
+        },
+        {
+          "name": "banned_phrase_removal",
+          "points": 15,
+          "earned": 15.0,
+          "detail": "0 banned phrases present"
+        },
+        {
+          "name": "weak_pattern_reduction",
+          "points": 15,
+          "earned": 15.0,
+          "detail": "3/3 reduced"
+        },
+        {
+          "name": "judgment_markers",
+          "points": 10,
+          "earned": 10,
+          "detail": "1 judgment markers"
+        },
+        {
+          "name": "specificity_markers",
+          "points": 10,
+          "earned": 10.0,
+          "detail": "6 specificity markers"
+        }
+      ]
+    },
+    {
+      "case_id": "internal-memo",
+      "mode": "gold",
+      "score": 95.0,
+      "max_score": 100,
+      "metrics": [
+        {
+          "name": "word_count_fit",
+          "points": 10,
+          "earned": 10,
+          "detail": "60 words"
+        },
+        {
+          "name": "fact_preservation",
+          "points": 20,
+          "earned": 20.0,
+          "detail": "4/4 preserved"
+        },
+        {
+          "name": "strengthening_signals",
+          "points": 20,
+          "earned": 20.0,
+          "detail": "4 strengthening signals"
+        },
+        {
+          "name": "banned_phrase_removal",
+          "points": 15,
+          "earned": 15.0,
+          "detail": "0 banned phrases present"
+        },
+        {
+          "name": "weak_pattern_reduction",
+          "points": 15,
+          "earned": 10.0,
+          "detail": "2/3 reduced"
+        },
+        {
+          "name": "judgment_markers",
+          "points": 10,
+          "earned": 10,
+          "detail": "2 judgment markers"
+        },
+        {
+          "name": "specificity_markers",
+          "points": 10,
+          "earned": 10.0,
+          "detail": "4 specificity markers"
+        }
+      ]
+    },
+    {
+      "case_id": "founder-update",
+      "mode": "gold",
+      "score": 100.0,
+      "max_score": 100,
+      "metrics": [
+        {
+          "name": "word_count_fit",
+          "points": 10,
+          "earned": 10,
+          "detail": "62 words"
+        },
+        {
+          "name": "fact_preservation",
+          "points": 20,
+          "earned": 20.0,
+          "detail": "3/3 preserved"
+        },
+        {
+          "name": "strengthening_signals",
+          "points": 20,
+          "earned": 20.0,
+          "detail": "5 strengthening signals"
+        },
+        {
+          "name": "banned_phrase_removal",
+          "points": 15,
+          "earned": 15.0,
+          "detail": "0 banned phrases present"
+        },
+        {
+          "name": "weak_pattern_reduction",
+          "points": 15,
+          "earned": 15.0,
+          "detail": "2/2 reduced"
+        },
+        {
+          "name": "judgment_markers",
+          "points": 10,
+          "earned": 10,
+          "detail": "3 judgment markers"
+        },
+        {
+          "name": "specificity_markers",
+          "points": 10,
+          "earned": 10.0,
+          "detail": "5 specificity markers"
+        }
+      ]
+    }
+  ],
+  "input": [
+    {
+      "case_id": "technical-explainer",
+      "mode": "input",
+      "score": 30.0,
+      "max_score": 100,
+      "metrics": [
+        {
+          "name": "word_count_fit",
+          "points": 10,
+          "earned": 0,
+          "detail": "46 words, target 55-120"
+        },
+        {
+          "name": "fact_preservation",
+          "points": 20,
+          "earned": 20.0,
+          "detail": "2/2 preserved"
+        },
+        {
+          "name": "strengthening_signals",
+          "points": 20,
+          "earned": 0.0,
+          "detail": "0 strengthening signals"
+        },
+        {
+          "name": "banned_phrase_removal",
+          "points": 15,
+          "earned": 0.0,
+          "detail": "3 banned phrases present"
+        },
+        {
+          "name": "weak_pattern_reduction",
+          "points": 15,
+          "earned": 0.0,
+          "detail": "0/3 reduced"
+        },
+        {
+          "name": "judgment_markers",
+          "points": 10,
+          "earned": 10,
+          "detail": "1 judgment markers"
+        },
+        {
+          "name": "specificity_markers",
+          "points": 10,
+          "earned": 0.0,
+          "detail": "0 specificity markers"
+        }
+      ]
+    },
+    {
+      "case_id": "finance-landing-page",
+      "mode": "input",
+      "score": 50.0,
+      "max_score": 100,
+      "metrics": [
+        {
+          "name": "word_count_fit",
+          "points": 10,
+          "earned": 0,
+          "detail": "36 words, target 40-100"
+        },
+        {
+          "name": "fact_preservation",
+          "points": 20,
+          "earned": 20.0,
+          "detail": "3/3 preserved"
+        },
+        {
+          "name": "strengthening_signals",
+          "points": 20,
+          "earned": 20.0,
+          "detail": "2 strengthening signals"
+        },
+        {
+          "name": "banned_phrase_removal",
+          "points": 15,
+          "earned": 0.0,
+          "detail": "5 banned phrases present"
+        },
+        {
+          "name": "weak_pattern_reduction",
+          "points": 15,
+          "earned": 0.0,
+          "detail": "0/3 reduced"
+        },
+        {
+          "name": "judgment_markers",
+          "points": 10,
+          "earned": 0,
+          "detail": "0 judgment markers"
+        },
+        {
+          "name": "specificity_markers",
+          "points": 10,
+          "earned": 10.0,
+          "detail": "3 specificity markers"
+        }
+      ]
+    },
+    {
+      "case_id": "internal-memo",
+      "mode": "input",
+      "score": 60.0,
+      "max_score": 100,
+      "metrics": [
+        {
+          "name": "word_count_fit",
+          "points": 10,
+          "earned": 0,
+          "detail": "47 words, target 55-130"
+        },
+        {
+          "name": "fact_preservation",
+          "points": 20,
+          "earned": 20.0,
+          "detail": "4/4 preserved"
+        },
+        {
+          "name": "strengthening_signals",
+          "points": 20,
+          "earned": 20.0,
+          "detail": "3 strengthening signals"
+        },
+        {
+          "name": "banned_phrase_removal",
+          "points": 15,
+          "earned": 0.0,
+          "detail": "3 banned phrases present"
+        },
+        {
+          "name": "weak_pattern_reduction",
+          "points": 15,
+          "earned": 0.0,
+          "detail": "0/3 reduced"
+        },
+        {
+          "name": "judgment_markers",
+          "points": 10,
+          "earned": 10,
+          "detail": "1 judgment markers"
+        },
+        {
+          "name": "specificity_markers",
+          "points": 10,
+          "earned": 10.0,
+          "detail": "3 specificity markers"
+        }
+      ]
+    },
+    {
+      "case_id": "founder-update",
+      "mode": "input",
+      "score": 30.0,
+      "max_score": 100,
+      "metrics": [
+        {
+          "name": "word_count_fit",
+          "points": 10,
+          "earned": 0,
+          "detail": "42 words, target 50-120"
+        },
+        {
+          "name": "fact_preservation",
+          "points": 20,
+          "earned": 20.0,
+          "detail": "3/3 preserved"
+        },
+        {
+          "name": "strengthening_signals",
+          "points": 20,
+          "earned": 0.0,
+          "detail": "0 strengthening signals"
+        },
+        {
+          "name": "banned_phrase_removal",
+          "points": 15,
+          "earned": 0.0,
+          "detail": "5 banned phrases present"
+        },
+        {
+          "name": "weak_pattern_reduction",
+          "points": 15,
+          "earned": 0.0,
+          "detail": "0/2 reduced"
+        },
+        {
+          "name": "judgment_markers",
+          "points": 10,
+          "earned": 0,
+          "detail": "0 judgment markers"
+        },
+        {
+          "name": "specificity_markers",
+          "points": 10,
+          "earned": 10.0,
+          "detail": "2 specificity markers"
+        }
+      ]
+    }
+  ],
+  "discriminative": true,
+  "margin": 218.33
+}

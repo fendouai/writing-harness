@@ -1,0 +1,1 @@
+Finance teams do not need another dashboard that claims to “transform” the close. They need fewer last-minute spreadsheet checks, faster approvals, and a cleaner path from ERP data to the numbers they review at month-end. This product is built for that: reconcile faster, track what is blocked, and close with less manual chasing.

@@ -1,0 +1,55 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="80" y1="60" x2="1120" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F6EFE6"/>
+      <stop offset="1" stop-color="#F8F8F2"/>
+    </linearGradient>
+    <linearGradient id="leftCard" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#FFF7ED"/>
+      <stop offset="1" stop-color="#FFE7D0"/>
+    </linearGradient>
+    <linearGradient id="rightCard" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#EAF7F4"/>
+      <stop offset="1" stop-color="#D5EFE8"/>
+    </linearGradient>
+    <filter id="shadow" x="0" y="0" width="1200" height="760" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#0F172A" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="760" rx="28" fill="url(#bg)"/>
+  <text x="80" y="96" fill="#10233F" font-family="Georgia, 'Times New Roman', serif" font-size="40" font-weight="700">Humanize Text vs Writing Harness</text>
+  <text x="80" y="132" fill="#43536B" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="20">One improves the surface. The other improves the writing system.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="180" width="490" height="500" rx="28" fill="url(#leftCard)"/>
+    <rect x="640" y="180" width="490" height="500" rx="28" fill="url(#rightCard)"/>
+  </g>
+
+  <circle cx="150" cy="240" r="20" fill="#F97316"/>
+  <text x="184" y="248" fill="#8A3D00" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="28" font-weight="700">Humanize Text</text>
+
+  <circle cx="720" cy="240" r="20" fill="#0F9D8A"/>
+  <text x="754" y="248" fill="#0B4E46" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="28" font-weight="700">Writing Harness</text>
+
+  <text x="110" y="302" fill="#7A3E10" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="21" font-weight="700">Target</text>
+  <text x="110" y="334" fill="#46352A" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="21">Make the draft sound less robotic.</text>
+  <text x="110" y="392" fill="#7A3E10" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="21" font-weight="700">Typical moves</text>
+  <text x="110" y="425" fill="#46352A" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="20">Tone tweaks, contractions, sentence variation,</text>
+  <text x="110" y="452" fill="#46352A" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="20">less formal vocabulary.</text>
+  <text x="110" y="510" fill="#7A3E10" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="21" font-weight="700">Common result</text>
+  <text x="110" y="543" fill="#46352A" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="20">A smoother draft that still may be vague, padded,</text>
+  <text x="110" y="570" fill="#46352A" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="20">or weak in judgment.</text>
+  <text x="110" y="628" fill="#7A3E10" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="21" font-weight="700">Risk</text>
+  <text x="110" y="661" fill="#46352A" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="20">Better style. Same weak thinking.</text>
+
+  <text x="680" y="302" fill="#0E5B52" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="21" font-weight="700">Target</text>
+  <text x="680" y="334" fill="#213E3B" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="21">Produce authored quality.</text>
+  <text x="680" y="392" fill="#0E5B52" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="21" font-weight="700">Typical moves</text>
+  <text x="680" y="425" fill="#213E3B" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="20">Spec, thesis, rewrite workflow, sensors,</text>
+  <text x="680" y="452" fill="#213E3B" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="20">benchmarks, and iteration.</text>
+  <text x="680" y="510" fill="#0E5B52" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="21" font-weight="700">Common result</text>
+  <text x="680" y="543" fill="#213E3B" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="20">Clearer, sharper, more useful writing with</text>
+  <text x="680" y="570" fill="#213E3B" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="20">stronger specificity and judgment.</text>
+  <text x="680" y="628" fill="#0E5B52" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="21" font-weight="700">Strength</text>
+  <text x="680" y="661" fill="#213E3B" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="20">Repeatable quality, not one-off polishing.</text>
+</svg>

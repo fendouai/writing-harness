@@ -1,0 +1,23 @@
+{
+  "winner": "right",
+  "left_score": 28,
+  "right_score": 91,
+  "confidence": 5,
+  "summary": "The right rewrite is more technically credible, more specific, and clearer about when retries help versus hurt.",
+  "strengths_left": [
+    "Mentions retries and reliability"
+  ],
+  "strengths_right": [
+    "Adds concrete transient failure examples",
+    "Introduces idempotency as a practical constraint",
+    "Makes a clear recommendation instead of summarizing options"
+  ],
+  "risks_left": [
+    "Relies on stock phrasing",
+    "Stays abstract",
+    "Avoids operational detail"
+  ],
+  "risks_right": [
+    "Could go deeper on implementation detail in a longer piece"
+  ]
+}

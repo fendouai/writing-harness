@@ -1,0 +1,23 @@
+{
+  "winner": "right",
+  "left_score": 30,
+  "right_score": 92,
+  "confidence": 5,
+  "summary": "The right rewrite turns vague optimism into a sharper operating update with an explicit next move.",
+  "strengths_left": [
+    "Mentions customer conversations, onboarding, and pricing"
+  ],
+  "strengths_right": [
+    "Surfaces a specific tension in the funnel",
+    "Makes the next priority explicit",
+    "Sounds more observed and decisive"
+  ],
+  "risks_left": [
+    "Relies on empty startup-update language",
+    "Lacks concrete observation",
+    "Ends with generic iteration language"
+  ],
+  "risks_right": [
+    "The supporting evidence is still compact rather than fully detailed"
+  ]
+}

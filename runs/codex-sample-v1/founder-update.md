@@ -1,0 +1,1 @@
+Customer conversations this week clarified one issue faster than any dashboard could: the product is landing, but the pricing story is not. People are getting through onboarding, then hesitating because they are unsure what they would pay and when. The next move is not more feature work. It is tighter pricing communication and a simpler self-serve path at sign-up.

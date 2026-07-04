@@ -1,0 +1,24 @@
+{
+  "cases": [
+    {
+      "case_id": "technical-explainer",
+      "packet_file": "runs/session-demo-benchmark/packets/technical-explainer.md",
+      "result_file": "runs/session-demo-benchmark/results/technical-explainer.md"
+    },
+    {
+      "case_id": "finance-landing-page",
+      "packet_file": "runs/session-demo-benchmark/packets/finance-landing-page.md",
+      "result_file": "runs/session-demo-benchmark/results/finance-landing-page.md"
+    },
+    {
+      "case_id": "internal-memo",
+      "packet_file": "runs/session-demo-benchmark/packets/internal-memo.md",
+      "result_file": "runs/session-demo-benchmark/results/internal-memo.md"
+    },
+    {
+      "case_id": "founder-update",
+      "packet_file": "runs/session-demo-benchmark/packets/founder-update.md",
+      "result_file": "runs/session-demo-benchmark/results/founder-update.md"
+    }
+  ]
+}

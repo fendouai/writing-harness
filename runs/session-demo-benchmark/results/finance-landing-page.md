@@ -1,0 +1,1 @@
+Finance teams do not need more “visibility.” They need a close process that stops depending on scattered spreadsheets and last-minute ERP checks. This product helps teams reconcile faster, see what is blocked, and move approvals without the usual month-end chase across files, tabs, and follow-up messages.

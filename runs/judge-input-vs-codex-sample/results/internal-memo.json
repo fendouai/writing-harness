@@ -1,0 +1,23 @@
+{
+  "winner": "right",
+  "left_score": 48,
+  "right_score": 90,
+  "confidence": 5,
+  "summary": "The right rewrite makes a recommendation and justifies it with source-of-truth logic, while the left memo stays overly balanced.",
+  "strengths_left": [
+    "Names the real document-location options",
+    "Mentions version control and discoverability"
+  ],
+  "strengths_right": [
+    "Takes a position",
+    "Clarifies the split between source-of-truth docs and lighter collaboration",
+    "Explains why repo-local docs are more trustworthy"
+  ],
+  "risks_left": [
+    "Hides behind balance",
+    "Ends without a recommendation"
+  ],
+  "risks_right": [
+    "Could acknowledge one stronger tradeoff if expanded"
+  ]
+}

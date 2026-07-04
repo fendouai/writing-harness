@@ -1,0 +1,54 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg3" x1="100" y1="40" x2="1080" y2="680" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8F3EC"/>
+      <stop offset="1" stop-color="#F0F7F5"/>
+    </linearGradient>
+    <filter id="shadow3" x="0" y="0" width="1200" height="720" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#0F172A" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="720" rx="28" fill="url(#bg3)"/>
+  <text x="80" y="96" fill="#10233F" font-family="Georgia, 'Times New Roman', serif" font-size="40" font-weight="700">Benchmark + Judge Workflow</text>
+  <text x="80" y="132" fill="#43536B" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="20">How Writing Harness moves from draft cleanup to repeatable evaluation.</text>
+
+  <g filter="url(#shadow3)">
+    <rect x="70" y="220" width="180" height="170" rx="24" fill="#FFF0DE"/>
+    <rect x="290" y="220" width="180" height="170" rx="24" fill="#E8F6F1"/>
+    <rect x="510" y="220" width="180" height="170" rx="24" fill="#E9F0FA"/>
+    <rect x="730" y="220" width="180" height="170" rx="24" fill="#F6ECE6"/>
+    <rect x="950" y="220" width="180" height="170" rx="24" fill="#DDF3EC"/>
+  </g>
+
+  <text x="95" y="275" fill="#A64B00" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="20" font-weight="700">1. Prepare session</text>
+  <text x="95" y="307" fill="#4B3A2A" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="18">Generate packets,</text>
+  <text x="95" y="333" fill="#4B3A2A" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="18">manifest, and runbook.</text>
+
+  <text x="315" y="275" fill="#0E5B52" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="20" font-weight="700">2. Agent run</text>
+  <text x="315" y="307" fill="#22403C" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="18">Use the skill to process</text>
+  <text x="315" y="333" fill="#22403C" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="18">every benchmark case.</text>
+
+  <text x="535" y="275" fill="#1D4F94" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="20" font-weight="700">3. Deterministic score</text>
+  <text x="535" y="307" fill="#24374E" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="18">Check facts, banned</text>
+  <text x="535" y="333" fill="#24374E" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="18">phrases, specificity.</text>
+
+  <text x="755" y="275" fill="#83583E" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="20" font-weight="700">4. Pairwise judge</text>
+  <text x="755" y="307" fill="#4A3D36" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="18">Compare two runs with</text>
+  <text x="755" y="333" fill="#4A3D36" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="18">structured JSON output.</text>
+
+  <text x="975" y="275" fill="#0E5B52" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="20" font-weight="700">5. Improve harness</text>
+  <text x="975" y="307" fill="#22403C" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="18">Revise prompts, docs,</text>
+  <text x="975" y="333" fill="#22403C" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="18">or skill behavior.</text>
+
+  <path d="M250 305H290" stroke="#C08A59" stroke-width="4" stroke-linecap="round"/>
+  <path d="M470 305H510" stroke="#6EA79A" stroke-width="4" stroke-linecap="round"/>
+  <path d="M690 305H730" stroke="#6F90BE" stroke-width="4" stroke-linecap="round"/>
+  <path d="M910 305H950" stroke="#B28D7C" stroke-width="4" stroke-linecap="round"/>
+
+  <g filter="url(#shadow3)">
+    <rect x="120" y="470" width="960" height="150" rx="28" fill="#10233F"/>
+  </g>
+  <text x="160" y="528" fill="#F7F4ED" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="700">Why this matters</text>
+  <text x="160" y="568" fill="#D8E1ED" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="20">You do not just get better rewrites. You get a repeatable loop for generating, scoring, comparing,</text>
+  <text x="160" y="596" fill="#D8E1ED" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="20">and improving AI-assisted writing over time.</text>
+</svg>

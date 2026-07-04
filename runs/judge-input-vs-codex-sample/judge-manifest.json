@@ -1,0 +1,24 @@
+{
+  "cases": [
+    {
+      "case_id": "technical-explainer",
+      "packet_file": "runs/judge-input-vs-codex-sample/packets/technical-explainer.md",
+      "result_file": "runs/judge-input-vs-codex-sample/results/technical-explainer.json"
+    },
+    {
+      "case_id": "finance-landing-page",
+      "packet_file": "runs/judge-input-vs-codex-sample/packets/finance-landing-page.md",
+      "result_file": "runs/judge-input-vs-codex-sample/results/finance-landing-page.json"
+    },
+    {
+      "case_id": "internal-memo",
+      "packet_file": "runs/judge-input-vs-codex-sample/packets/internal-memo.md",
+      "result_file": "runs/judge-input-vs-codex-sample/results/internal-memo.json"
+    },
+    {
+      "case_id": "founder-update",
+      "packet_file": "runs/judge-input-vs-codex-sample/packets/founder-update.md",
+      "result_file": "runs/judge-input-vs-codex-sample/results/founder-update.json"
+    }
+  ]
+}

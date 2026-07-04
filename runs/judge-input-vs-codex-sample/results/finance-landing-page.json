@@ -1,0 +1,23 @@
+{
+  "winner": "right",
+  "left_score": 35,
+  "right_score": 88,
+  "confidence": 5,
+  "summary": "The right rewrite sounds like it understands the month-end close, while the left version reads like generic B2B software copy.",
+  "strengths_left": [
+    "Mentions finance teams, ERP, and spreadsheets"
+  ],
+  "strengths_right": [
+    "Grounds the problem in close operations",
+    "Removes inflated marketing language",
+    "Uses more believable stakes and tasks"
+  ],
+  "risks_left": [
+    "Heavy use of stock promotional language",
+    "Low specificity",
+    "Weak audience credibility"
+  ],
+  "risks_right": [
+    "Could mention one more concrete workflow step"
+  ]
+}

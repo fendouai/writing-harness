@@ -1,0 +1,48 @@
+[
+  {
+    "id": "generic-blog-rewrite",
+    "description": "The harness should diagnose a generic AI-sounding article and prescribe a stronger rewrite path.",
+    "required_terms": [
+      "thesis",
+      "generic abstraction",
+      "specificity",
+      "judgment",
+      "audience",
+      "rubric"
+    ]
+  },
+  {
+    "id": "prompt-upgrade-request",
+    "description": "The harness should support converting vague humanization requests into authored-quality prompts.",
+    "required_terms": [
+      "authored quality",
+      "prompt templates",
+      "clear intent",
+      "audience awareness",
+      "concrete observations",
+      "credible voice"
+    ]
+  },
+  {
+    "id": "harness-review-mode",
+    "description": "The harness should support a review mode that returns diagnosis and next-pass recommendations, not just a rewrite.",
+    "required_terms": [
+      "diagnosis",
+      "rewrite strategy",
+      "rubric score",
+      "next-pass recommendations",
+      "failure taxonomy"
+    ]
+  },
+  {
+    "id": "reference-loading-discipline",
+    "description": "The harness should behave like a real harness: short entrypoint, deeper structured references.",
+    "required_terms": [
+      "entrypoint",
+      "system of record",
+      "references",
+      "compact",
+      "load only what is needed"
+    ]
+  }
+]

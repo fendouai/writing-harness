@@ -1,0 +1,1 @@
+Our innovative platform empowers finance teams to transform their close process with seamless automation and world-class visibility. It integrates with your ERP and spreadsheets to unlock efficiency, reduce friction, and drive strategic outcomes across the organization.

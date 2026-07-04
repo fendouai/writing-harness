@@ -1,0 +1,106 @@
+{
+  "total_cases": 4,
+  "wins": {
+    "left": 0,
+    "right": 4,
+    "tie": 0
+  },
+  "results": [
+    {
+      "winner": "right",
+      "left_score": 35,
+      "right_score": 88,
+      "confidence": 5,
+      "summary": "The right rewrite sounds like it understands the month-end close, while the left version reads like generic B2B software copy.",
+      "strengths_left": [
+        "Mentions finance teams, ERP, and spreadsheets"
+      ],
+      "strengths_right": [
+        "Grounds the problem in close operations",
+        "Removes inflated marketing language",
+        "Uses more believable stakes and tasks"
+      ],
+      "risks_left": [
+        "Heavy use of stock promotional language",
+        "Low specificity",
+        "Weak audience credibility"
+      ],
+      "risks_right": [
+        "Could mention one more concrete workflow step"
+      ],
+      "file": "runs/judge-input-vs-codex-sample/results/finance-landing-page.json"
+    },
+    {
+      "winner": "right",
+      "left_score": 30,
+      "right_score": 92,
+      "confidence": 5,
+      "summary": "The right rewrite turns vague optimism into a sharper operating update with an explicit next move.",
+      "strengths_left": [
+        "Mentions customer conversations, onboarding, and pricing"
+      ],
+      "strengths_right": [
+        "Surfaces a specific tension in the funnel",
+        "Makes the next priority explicit",
+        "Sounds more observed and decisive"
+      ],
+      "risks_left": [
+        "Relies on empty startup-update language",
+        "Lacks concrete observation",
+        "Ends with generic iteration language"
+      ],
+      "risks_right": [
+        "The supporting evidence is still compact rather than fully detailed"
+      ],
+      "file": "runs/judge-input-vs-codex-sample/results/founder-update.json"
+    },
+    {
+      "winner": "right",
+      "left_score": 48,
+      "right_score": 90,
+      "confidence": 5,
+      "summary": "The right rewrite makes a recommendation and justifies it with source-of-truth logic, while the left memo stays overly balanced.",
+      "strengths_left": [
+        "Names the real document-location options",
+        "Mentions version control and discoverability"
+      ],
+      "strengths_right": [
+        "Takes a position",
+        "Clarifies the split between source-of-truth docs and lighter collaboration",
+        "Explains why repo-local docs are more trustworthy"
+      ],
+      "risks_left": [
+        "Hides behind balance",
+        "Ends without a recommendation"
+      ],
+      "risks_right": [
+        "Could acknowledge one stronger tradeoff if expanded"
+      ],
+      "file": "runs/judge-input-vs-codex-sample/results/internal-memo.json"
+    },
+    {
+      "winner": "right",
+      "left_score": 28,
+      "right_score": 91,
+      "confidence": 5,
+      "summary": "The right rewrite is more technically credible, more specific, and clearer about when retries help versus hurt.",
+      "strengths_left": [
+        "Mentions retries and reliability"
+      ],
+      "strengths_right": [
+        "Adds concrete transient failure examples",
+        "Introduces idempotency as a practical constraint",
+        "Makes a clear recommendation instead of summarizing options"
+      ],
+      "risks_left": [
+        "Relies on stock phrasing",
+        "Stays abstract",
+        "Avoids operational detail"
+      ],
+      "risks_right": [
+        "Could go deeper on implementation detail in a longer piece"
+      ],
+      "file": "runs/judge-input-vs-codex-sample/results/technical-explainer.json"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+There are several valid options for where we keep our engineering handbook and runbooks. Notion is familiar to more teams, while Markdown in the repository has advantages for version control and discoverability. Both approaches offer benefits, and we should consider tradeoffs carefully before making a final decision.

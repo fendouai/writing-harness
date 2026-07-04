@@ -1,0 +1,35 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="spBg" x1="40" y1="30" x2="1160" y2="600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FAF1E6"/>
+      <stop offset="0.55" stop-color="#F6F7F1"/>
+      <stop offset="1" stop-color="#E7F5F1"/>
+    </linearGradient>
+    <linearGradient id="spAccent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#E66A1C"/>
+      <stop offset="1" stop-color="#0F9D8A"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" rx="36" fill="url(#spBg)"/>
+  <rect x="72" y="74" width="160" height="160" rx="32" fill="#10233F"/>
+  <path d="M111 124H138L153 163L168 124H195L165 197H138L111 124Z" fill="#FFF8F0"/>
+  <path d="M172 197L187 163L202 197H172Z" fill="url(#spAccent)"/>
+  <text x="274" y="145" fill="#10233F" font-family="Georgia, 'Times New Roman', serif" font-size="78" font-weight="700">Writing Harness</text>
+  <text x="278" y="196" fill="#50657D" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="30">A skill-first system for turning AI drafts into authored-quality writing.</text>
+
+  <rect x="76" y="300" width="318" height="216" rx="28" fill="#FFF0DE"/>
+  <rect x="441" y="300" width="318" height="216" rx="28" fill="#E6F5F0"/>
+  <rect x="806" y="300" width="318" height="216" rx="28" fill="#E8EFFA"/>
+
+  <text x="106" y="353" fill="#A64B00" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="28" font-weight="700">Rewrite workflow</text>
+  <text x="106" y="392" fill="#4B3A2A" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="22">Spec, thesis, rewrite,</text>
+  <text x="106" y="423" fill="#4B3A2A" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="22">judgment, specificity.</text>
+
+  <text x="471" y="353" fill="#0E5B52" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="28" font-weight="700">Quality sensors</text>
+  <text x="471" y="392" fill="#24403C" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="22">Rubric, failure taxonomy,</text>
+  <text x="471" y="423" fill="#24403C" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="22">meta checks.</text>
+
+  <text x="836" y="353" fill="#1D4F94" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="28" font-weight="700">Benchmark loop</text>
+  <text x="836" y="392" fill="#25384D" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="22">Candidate runs, scoring,</text>
+  <text x="836" y="423" fill="#25384D" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="22">and pairwise judge flows.</text>
+</svg>

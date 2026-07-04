@@ -1,0 +1,1 @@
+Retries help reliability only when you use them selectively. Retry timeouts and `429` responses with backoff; do not blindly retry every failure. If the request changes state, make sure it is idempotent first, or protect it with an idempotency key. The goal is not “more retries.” It is fewer avoidable failures without turning a transient problem into duplicated work.
