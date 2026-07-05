@@ -86,7 +86,7 @@ It can also structure longer analytical writing with:
 
 See the worked English example:
 
-- [`docs/examples/cs249r-book-article.md`](/Users/f/GitHub/writing-harness/docs/examples/cs249r-book-article.md)
+- [`docs/examples/cs249r-book-article.md`](docs/examples/cs249r-book-article.md)
 
 This example uses the open-source project [`harvard-edge/cs249r_book`](https://github.com/harvard-edge/cs249r_book) as the subject and shows how the harness can move a reader from:
 
@@ -147,14 +147,14 @@ This repository has four main parts:
 
 1. `README.md`
    The guide and operating philosophy.
-2. [`skills/writing-harness/SKILL.md`](/Users/f/GitHub/writing-harness/skills/writing-harness/SKILL.md)
+2. [`skills/writing-harness/SKILL.md`](skills/writing-harness/SKILL.md)
    The reusable agent skill.
-3. [`skills/writing-harness/references/`](/Users/f/GitHub/writing-harness/skills/writing-harness/references/)
+3. [`skills/writing-harness/references/`](skills/writing-harness/references/)
    The durable system of record for workflows, sensors, cognitive baselines, architecture, and rollback rules.
-4. [`evals/`](/Users/f/GitHub/writing-harness/evals/)
+4. [`evals/`](evals/)
    Deterministic checks, benchmarks, judge workflows, and reports.
 
-Examples and worked articles live under [`docs/examples/`](/Users/f/GitHub/writing-harness/docs/examples/).
+Examples and worked articles live under [`docs/examples/`](docs/examples/).
 
 This follows a harness-first documentation rule:
 
@@ -454,9 +454,9 @@ The repository includes two test layers:
 
 Start here:
 
-- [`evals/README.md`](/Users/f/GitHub/writing-harness/evals/README.md)
-- [`evals/benchmarks/README.md`](/Users/f/GitHub/writing-harness/evals/benchmarks/README.md)
-- [`docs/examples/cs249r-book-article.md`](/Users/f/GitHub/writing-harness/docs/examples/cs249r-book-article.md)
+- [`evals/README.md`](evals/README.md)
+- [`evals/benchmarks/README.md`](evals/benchmarks/README.md)
+- [`docs/examples/cs249r-book-article.md`](docs/examples/cs249r-book-article.md)
 
 ## Sources and Inspiration
 
