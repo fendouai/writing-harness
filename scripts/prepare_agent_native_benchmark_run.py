@@ -6,6 +6,8 @@ import argparse
 import json
 from pathlib import Path
 
+from writing_checks import build_default_cw_artifact, build_default_trace_template
+
 
 ROOT = Path(__file__).resolve().parent.parent
 CASES_PATH = ROOT / "evals" / "benchmarks" / "cases.json"
@@ -15,7 +17,15 @@ def read_cases() -> list[dict]:
     return json.loads(CASES_PATH.read_text(encoding="utf-8"))
 
 
-def build_packet(case: dict, output_path: Path) -> str:
+def bullets(items: list[str]) -> str:
+    return "\n".join(f"- {item}" for item in items)
+
+
+def contract_bullets(contracts: list[dict]) -> str:
+    return "\n".join(f"- {item['name']}: match {', '.join(item['terms'])}" for item in contracts)
+
+
+def build_packet(case: dict, output_path: Path, trace_path: Path, cw_path: Path) -> str:
     return f"""# Writing Harness Benchmark Packet
 
 Case ID: {case["id"]}
@@ -29,22 +39,49 @@ Instructions:
 2. Rewrite the draft for authored quality.
 3. Preserve the required facts.
 4. Avoid the banned phrases.
-5. Return only the rewritten text in the output file.
+5. Satisfy the genre contracts.
+6. Write the final rewrite to the output file.
+7. Write a full CW artifact sidecar.
+8. Make sure the CW artifact contains a trace showing spec -> diagnose -> rewrite -> evaluate.
 
 Required facts:
-- {chr(10).join(f"- {item}" for item in case["preserve_facts_all"])}
+{bullets(case["preserve_facts_all"])}
 
 Strengthening signals:
-- {chr(10).join(f"- {item}" for item in case["strengthen_with_any"])}
+{bullets(case["strengthen_with_any"])}
 
 Avoid phrases:
-- {chr(10).join(f"- {item}" for item in case["avoid_phrases"])}
+{bullets(case["avoid_phrases"])}
 
 Suggested weak patterns to reduce:
-- {chr(10).join(f"- {item}" for item in case["reduce_phrases"])}
+{bullets(case["reduce_phrases"])}
+
+Genre contracts:
+{contract_bullets(case.get("genre_contracts", []))}
 
 Write the final rewrite to:
 {output_path}
+
+Write the trace JSON to:
+{trace_path}
+
+Trace JSON must contain:
+- spec
+- diagnose
+- rewrite
+- evaluate
+
+Write the CW artifact JSON to:
+{cw_path}
+
+CW artifact must contain:
+- baseline
+- architecture
+- modules
+- trace
+- unit_tests
+- integration
+- rollback
 
 Draft:
 {case["input_text"]}
@@ -71,14 +108,20 @@ def main() -> int:
     manifest: list[dict] = []
     for case in cases:
         result_path = results_dir / f"{case['id']}.md"
-        packet = build_packet(case, result_path.resolve())
+        trace_path = results_dir / f"{case['id']}.trace.json"
+        cw_path = results_dir / f"{case['id']}.cw.json"
+        packet = build_packet(case, result_path.resolve(), trace_path.resolve(), cw_path.resolve())
         packet_path = packets_dir / f"{case['id']}.md"
         packet_path.write_text(packet, encoding="utf-8")
+        trace_path.write_text(json.dumps(build_default_trace_template(case), indent=2), encoding="utf-8")
+        cw_path.write_text(json.dumps(build_default_cw_artifact(case), indent=2), encoding="utf-8")
         manifest.append(
             {
                 "case_id": case["id"],
                 "packet_file": str(packet_path),
                 "result_file": str(result_path),
+                "trace_file": str(trace_path),
+                "cw_file": str(cw_path),
             }
         )
 

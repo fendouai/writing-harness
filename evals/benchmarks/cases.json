@@ -12,7 +12,16 @@
     "avoid_phrases": ["it is important to note", "in today's fast-paced", "seamless user experience"],
     "reduce_phrases": ["different", "organizations should", "pros and cons"],
     "judgment_markers_any": ["but", "if", "when", "only", "instead"],
-    "specificity_markers_any": ["timeout", "429", "POST", "GET", "idempotent", "backoff"]
+    "specificity_markers_any": ["timeout", "429", "POST", "GET", "idempotent", "backoff"],
+    "genre_contracts": [
+      {"name": "states operational boundary", "mode": "required", "terms": ["only when", "do not", "not every", "if"], "min_hits": 1},
+      {"name": "uses implementation detail", "mode": "required", "terms": ["429", "timeout", "backoff", "idempotent", "POST", "GET"], "min_hits": 2}
+    ],
+    "cognitive_targets": {
+      "K": {"distinction_markers_any": ["only", "not every", "rather than", "if"], "min_distinctions": 1, "action_verbs_any": ["retry", "backoff", "use", "avoid", "check"], "min_action_verbs": 2},
+      "P": {"if_then_min": 1, "requires_template": false, "process_terms_any": ["if", "when", "backoff", "timeout", "idempotent"], "min_process_terms": 2},
+      "A": {"agency_terms_any": ["use", "choose", "avoid", "control"], "victim_terms_any": ["stuck", "forced", "can't"], "min_resistance_drop": 2}
+    }
   },
   {
     "id": "finance-landing-page",
@@ -27,7 +36,16 @@
     "avoid_phrases": ["innovative platform", "empowers", "seamless automation", "world-class visibility", "strategic outcomes"],
     "reduce_phrases": ["efficiency", "friction", "organization"],
     "judgment_markers_any": ["not", "instead", "when", "if"],
-    "specificity_markers_any": ["month-end", "close", "reconcile", "approval", "ERP", "spreadsheet"]
+    "specificity_markers_any": ["month-end", "close", "reconcile", "approval", "ERP", "spreadsheet"],
+    "genre_contracts": [
+      {"name": "shows real close workflow", "mode": "required", "terms": ["close", "month-end", "reconcile", "approval"], "min_hits": 2},
+      {"name": "speaks to finance operators directly", "mode": "required", "terms": ["finance teams", "controller", "ERP", "spreadsheet"], "min_hits": 2}
+    ],
+    "cognitive_targets": {
+      "K": {"distinction_markers_any": ["do not need", "they need", "instead"], "min_distinctions": 1, "action_verbs_any": ["reconcile", "move", "track", "review"], "min_action_verbs": 2},
+      "P": {"if_then_min": 0, "requires_template": false, "process_terms_any": ["close", "month-end", "approval", "ERP", "spreadsheet"], "min_process_terms": 3},
+      "A": {"agency_terms_any": ["need", "move", "track"], "victim_terms_any": ["friction", "blocked"], "min_resistance_drop": 2}
+    }
   },
   {
     "id": "internal-memo",
@@ -42,7 +60,16 @@
     "avoid_phrases": ["several valid options", "offer benefits", "consider tradeoffs carefully"],
     "reduce_phrases": ["both", "benefits", "decision"],
     "judgment_markers_any": ["should", "because", "instead", "if"],
-    "specificity_markers_any": ["source of truth", "version control", "repository", "runbooks"]
+    "specificity_markers_any": ["source of truth", "version control", "repository", "runbooks"],
+    "genre_contracts": [
+      {"name": "makes a recommendation", "mode": "required", "terms": ["recommend", "should", "better move", "we should"], "min_hits": 1},
+      {"name": "defends source of truth logic", "mode": "required", "terms": ["source of truth", "version control", "repository", "discoverability"], "min_hits": 2}
+    ],
+    "cognitive_targets": {
+      "K": {"distinction_markers_any": ["instead", "rather than", "source of truth"], "min_distinctions": 1, "action_verbs_any": ["recommend", "keep", "review", "use"], "min_action_verbs": 2},
+      "P": {"if_then_min": 0, "requires_template": false, "process_terms_any": ["version control", "repository", "runbooks", "source of truth"], "min_process_terms": 2},
+      "A": {"agency_terms_any": ["recommend", "should", "decide"], "victim_terms_any": ["can't", "stuck"], "min_resistance_drop": 2}
+    }
   },
   {
     "id": "founder-update",
@@ -57,6 +84,15 @@
     "avoid_phrases": ["productive week", "learned a lot", "product direction", "strong opportunities", "iterating thoughtfully"],
     "reduce_phrases": ["feedback", "users are excited"],
     "judgment_markers_any": ["but", "so", "because", "next"],
-    "specificity_markers_any": ["five", "sign-up", "drop-off", "pricing", "onboarding"]
+    "specificity_markers_any": ["five", "sign-up", "drop-off", "pricing", "onboarding"],
+    "genre_contracts": [
+      {"name": "surfaces an observed problem", "mode": "required", "terms": ["confusion", "drop-off", "pricing", "onboarding"], "min_hits": 2},
+      {"name": "names the next move", "mode": "required", "terms": ["next", "we will", "focus", "priority"], "min_hits": 1}
+    ],
+    "cognitive_targets": {
+      "K": {"distinction_markers_any": ["but", "instead", "not"], "min_distinctions": 1, "action_verbs_any": ["focus", "fix", "clarify", "prioritize"], "min_action_verbs": 2},
+      "P": {"if_then_min": 0, "requires_template": false, "process_terms_any": ["next", "priority", "pricing", "onboarding"], "min_process_terms": 2},
+      "A": {"agency_terms_any": ["focus", "priority", "clarify", "fix"], "victim_terms_any": ["confused", "stuck"], "min_resistance_drop": 2}
+    }
   }
 ]

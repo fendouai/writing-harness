@@ -1,0 +1,24 @@
+{
+  "spec": {
+    "reader": "engineering leadership",
+    "objective": "Turn a balanced memo into a recommendation with source-of-truth logic.",
+    "must_preserve": ["engineering handbook", "runbooks", "Notion", "Markdown"],
+    "must_avoid": ["several valid options", "offer benefits", "consider tradeoffs carefully"]
+  },
+  "diagnose": {
+    "failure_modes": ["false_balance", "no_real_thesis", "insightless_summary"],
+    "main_issue": "The memo names tradeoffs but avoids making a decision."
+  },
+  "rewrite": {
+    "central_claim": "The handbook and runbooks should live in the repository because they need version control and a durable source of truth.",
+    "edits": [
+      "State the recommendation early.",
+      "Use source-of-truth and discoverability as the reasoning spine.",
+      "Keep Notion as a secondary collaboration surface rather than the system of record."
+    ]
+  },
+  "evaluate": {
+    "self_score": 93,
+    "remaining_risks": ["Could acknowledge one stronger tradeoff if expanded into a longer memo."]
+  }
+}

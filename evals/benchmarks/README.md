@@ -16,6 +16,8 @@ Each benchmark case includes:
 - required facts to preserve
 - weak patterns to remove
 - stronger signals to introduce
+- genre contracts for what that writing surface must accomplish
+- cognitive targets for K/P/A state change
 - a gold rewrite
 
 The benchmark runner scores a candidate rewrite against those constraints.
@@ -89,6 +91,7 @@ my-run/
 Then run:
 
 ```bash
+python3 scripts/run_writing_lint.py --dir my-run
 python3 scripts/run_writing_harness_benchmarks.py --candidate-dir my-run
 ```
 
@@ -113,6 +116,7 @@ This creates:
 - one packet per case in `runs/prompt-a/packets/`
 - a manifest in `runs/prompt-a/run-manifest.json`
 - a one-session runbook in `runs/prompt-a/RUNBOOK.md`
+- default `.trace.json` and `.cw.json` sidecars in `runs/prompt-a/results/`
 
 Then use your agent surface with the Writing Harness skill to complete the whole session from the runbook and write the final output into `runs/prompt-a/results/`.
 
@@ -161,6 +165,12 @@ Each case is scored on deterministic harness-aligned criteria:
 - reduction of known weak patterns
 - presence of judgment markers
 - presence of specificity markers
+- writing-lint quality
+- genre contract satisfaction
+- K/P/A cognitive sensor quality
+- CW artifact completeness
+- module coverage quality
+- trace completeness for candidate runs
 
 This is not a full semantic judge. It is a deterministic benchmark harness intended to be:
 
@@ -175,8 +185,9 @@ Recommended workflow:
 
 1. Keep this deterministic suite in CI.
 2. Run candidate prompt or skill changes against it.
-3. Use the JSON reports for regression tracking.
-4. Layer live LLM judging or human review on top for higher-stakes releases.
+3. Require candidate runs to emit trace sidecars.
+4. Use the JSON reports for regression tracking.
+5. Layer live LLM judging or human review on top for higher-stakes releases.
 
 ## Future Extensions
 

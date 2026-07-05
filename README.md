@@ -4,7 +4,7 @@
 
 Build authored-quality AI writing with a reusable skill, a benchmark loop, and agent-native judge workflows.
 
-Open-source tooling for turning AI drafts into writing that is clearer, sharper, more useful, and easier to trust.
+Open-source tooling for turning AI drafts into writing that is clearer, sharper, more useful, easier to trust, and more process-auditable.
 
 ![Humanize Text vs Writing Harness](assets/humanize-vs-writing-harness.svg)
 
@@ -29,8 +29,10 @@ Most "humanize AI text" advice aims too low. It focuses on surface cleanup. Writ
 ## What you get
 
 - A reusable `writing-harness` skill for authored-quality rewrites.
+- A `writing-lint` layer for catching stock AI phrasing, weak openings, weak endings, and missing claims.
+- A cognitive-writing layer for baseline reports, AEH architecture, module specs, and rollback-aware QA.
 - A deterministic benchmark suite for regression testing.
-- An agent-native judge workflow for pairwise comparisons.
+- An agent-native judge workflow for pairwise comparisons and trace-aware QA.
 - A repository structure that separates guides, sensors, and evaluation artifacts.
 
 ## Core Features
@@ -76,6 +78,8 @@ These are compact examples from the benchmark set. The shift is the point: less 
 Run the deterministic checks:
 
 ```bash
+python3 scripts/run_writing_lint.py --dir runs/codex-sample-v1
+python3 scripts/run_writing_lint.py --cw-json runs/codex-sample-v1
 python3 scripts/run_writing_harness_evals.py
 python3 scripts/run_writing_harness_benchmarks.py --sanity
 ```
@@ -100,6 +104,15 @@ In this project, the harness has two jobs:
 
 1. Guide the writing process.
 2. Sense whether the result is actually good.
+
+In the upgraded cognitive-writing model, that process is explicit:
+
+1. baseline
+2. architecture
+3. module spec
+4. draft
+5. unit test
+6. integration and rollback
 
 That means this repository is not just a set of prompts. It is a control system for authored text.
 
@@ -195,6 +208,9 @@ Guides shape generation and revision.
 In this repository, the guides are:
 
 - the writing spec
+- the cognitive baseline
+- the AEH architecture
+- the module spec
 - the rewrite workflow
 - the prompting templates
 - the skill instructions
@@ -208,6 +224,9 @@ In this repository, the sensors are:
 - the writing rubric
 - the failure taxonomy
 - the meta checks for genericity and authorship
+- the writing-lint checks
+- the genre contracts in benchmark cases
+- the trace-aware QA checks in judge packets
 
 This distinction matters.
 
@@ -229,6 +248,14 @@ That is why `SKILL.md` is a map, not an encyclopedia.
 If you want the pattern in one line:
 
 > Short entrypoint. Structured references. Mechanical evaluation.
+
+If you want the operating model in one line:
+
+> Spec, rewrite, lint, benchmark, judge, trace.
+
+If you want the cognitive-systems model in one line:
+
+> Baseline, architecture, modules, draft, unit test, integration, rollback.
 
 ## The Four Layers of the Harness
 

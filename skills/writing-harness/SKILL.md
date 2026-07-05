@@ -67,7 +67,7 @@ Do not treat a fluent draft as a successful draft unless the sensors agree.
 
 ## Workflow
 
-Follow this sequence.
+Follow this sequence:
 
 ### 1. Build the spec
 
@@ -83,7 +83,13 @@ Before rewriting, identify or infer:
 
 If needed, ask for missing high-impact context. Otherwise infer and proceed.
 
-### 2. Identify the central claim
+### 2. Set the cognitive baseline
+
+If the task is trying to change the reader's mind, define the reader's K/P/A starting state and target state.
+
+Use `references/cognitive-baseline.md`.
+
+### 3. Identify the central claim
 
 Before editing line by line, state:
 
@@ -93,7 +99,7 @@ Before editing line by line, state:
 
 If the piece has no real thesis, say so and propose one before rewriting.
 
-### 3. Diagnose failure modes
+### 4. Diagnose failure modes
 
 Check the draft for:
 
@@ -109,7 +115,16 @@ Check the draft for:
 
 Use the taxonomy in `references/failure-taxonomy.md`.
 
-### 4. Rewrite for authored quality
+### 5. Choose an architecture and module path
+
+For cognitive-change tasks, use AEH plus the standard module path.
+
+Use:
+
+- `references/aeh-architecture.md`
+- `references/module-specs.md`
+
+### 6. Rewrite for authored quality
 
 Rewrite toward:
 
@@ -122,13 +137,13 @@ Rewrite toward:
 
 Make the text sound like someone with a perspective is writing to someone specific for a reason.
 
-### 5. Evaluate the result
+### 7. Evaluate the result
 
 Score the result with the rubric in `references/rubric.md`.
 
 If the rewrite is still weak on core dimensions, revise again instead of presenting a shallow cleanup as done.
 
-### 6. Iterate through the loop
+### 8. Iterate through the loop
 
 Use the sensors to decide whether the draft is done.
 
@@ -162,6 +177,8 @@ Load only what is needed:
   For diagnosis.
 - `references/prompt-templates.md`
   For reusable prompts and harness setup.
+- `references/cognitive-baseline.md`, `references/aeh-architecture.md`, `references/module-specs.md`, `references/cognitive-sensors.md`, `references/rollback-policy.md`
+  For cognitive-state transition work, module QA, and rollback design.
 
 Keep the skill compact. Pull deeper detail from references instead of expanding this file into a monolith.
 

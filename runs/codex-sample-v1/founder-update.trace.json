@@ -1,0 +1,24 @@
+{
+  "spec": {
+    "reader": "startup team and early investors",
+    "objective": "Make the update sound observed, specific, and decisive.",
+    "must_preserve": ["customer", "onboarding", "pricing"],
+    "must_avoid": ["productive week", "learned a lot", "product direction", "strong opportunities", "iterating thoughtfully"]
+  },
+  "diagnose": {
+    "failure_modes": ["generic_abstraction", "empty_empathy", "speaker_invisible"],
+    "main_issue": "The update gestures at learning but never names the actual problem discovered."
+  },
+  "rewrite": {
+    "central_claim": "The product is landing, but pricing confusion is slowing self-serve conversion and should be the next priority.",
+    "edits": [
+      "Replace broad optimism with one concrete observation from customer conversations.",
+      "Make the pricing and onboarding issue explicit.",
+      "End with the next move instead of a generic commitment to iterate."
+    ]
+  },
+  "evaluate": {
+    "self_score": 92,
+    "remaining_risks": ["Evidence is still compact because the format is short."]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "spec": {
+    "reader": "backend engineers",
+    "objective": "Explain when retries improve reliability without sounding generic.",
+    "must_preserve": ["retries", "reliability"],
+    "must_avoid": ["it is important to note", "in today's fast-paced", "seamless user experience"]
+  },
+  "diagnose": {
+    "failure_modes": ["generic_abstraction", "false_balance", "stock_phrase"],
+    "main_issue": "The draft says retries matter but never explains where they help or where they backfire."
+  },
+  "rewrite": {
+    "central_claim": "Retries help only when they are selective and paired with backoff and idempotency discipline.",
+    "edits": [
+      "Replace generic reliability framing with concrete transient failure examples.",
+      "Add a recommendation about what to retry and what not to retry.",
+      "Introduce idempotency as the practical boundary."
+    ]
+  },
+  "evaluate": {
+    "self_score": 91,
+    "remaining_risks": ["Could add one more implementation example in a longer version."]
+  }
+}

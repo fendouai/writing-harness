@@ -4,11 +4,27 @@ from __future__ import annotations
 
 import argparse
 import json
-import re
 import sys
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
+from writing_checks import (
+    build_default_cw_artifact,
+    count_any,
+    count_phrase,
+    cw_artifact_path_for_candidate,
+    evaluate_cognitive_dimensions,
+    evaluate_genre_contract,
+    evaluate_module_coverage,
+    lint_writing,
+    load_cw_artifact_if_present,
+    load_trace_if_present,
+    read_text as read,
+    summarize_lint,
+    validate_cw_artifact,
+    validate_trace_payload,
+    word_count,
+)
 
 ROOT = Path(__file__).resolve().parent.parent
 BENCH_DIR = ROOT / "evals" / "benchmarks"
@@ -34,33 +50,27 @@ class CaseReport:
     metrics: list[Metric]
 
 
-def read(path: Path) -> str:
-    return path.read_text(encoding="utf-8")
-
-
-def normalize(text: str) -> str:
-    return re.sub(r"\s+", " ", text.lower()).strip()
-
-
-def count_phrase(text: str, phrase: str) -> int:
-    return normalize(text).count(normalize(phrase))
-
-
-def count_any(text: str, phrases: list[str]) -> int:
-    return sum(1 for phrase in phrases if normalize(phrase) in normalize(text))
-
-
-def word_count(text: str) -> int:
-    return len(re.findall(r"\b[\w'-]+\b", text))
-
-
 def load_cases() -> list[dict]:
     return json.loads(read(CASES_PATH))
 
 
-def score_case(case: dict, candidate: str, mode: str) -> CaseReport:
+def metric_from_checks(name: str, points: int, checks: list, success_detail: str) -> Metric:
+    failed_errors = [check for check in checks if not check.passed and check.severity == "error"]
+    failed_all = [check for check in checks if not check.passed]
+    if not checks:
+        return Metric(name, points, points, success_detail)
+    if failed_errors:
+        earned = 0
+    else:
+        earned = round(points * ((len(checks) - len(failed_all)) / len(checks)), 2)
+    detail = success_detail if not failed_all else f"failed: {', '.join(check.name for check in failed_all[:4])}"
+    return Metric(name, points, earned, detail)
+
+
+def score_case(case: dict, candidate: str, mode: str, candidate_path: Path | None = None) -> CaseReport:
     input_text = case["input_text"]
     metrics: list[Metric] = []
+    cw_artifact = load_cw_artifact_if_present(candidate_path) if candidate_path is not None else None
 
     wc = word_count(candidate)
     min_words = case["target_words"]["min"]
@@ -103,6 +113,42 @@ def score_case(case: dict, candidate: str, mode: str) -> CaseReport:
     specificity_score = 10 * min(specificity_hits / 2, 1.0)
     metrics.append(Metric("specificity_markers", 10, specificity_score, f"{specificity_hits} specificity markers"))
 
+    lint_summary = summarize_lint(lint_writing(candidate))
+    lint_score = round((lint_summary["score"] / 100) * 10, 2)
+    metrics.append(
+        Metric(
+            "writing_lint",
+            10,
+            lint_score,
+            "pass" if lint_summary["passed"] else f"failed: {', '.join(lint_summary['failed_checks'])}",
+        )
+    )
+
+    contract_checks = evaluate_genre_contract(case, candidate)
+    contract_failed = [check for check in contract_checks if not check.passed]
+    contract_score = 10 * ((len(contract_checks) - len(contract_failed)) / len(contract_checks)) if contract_checks else 10
+    metrics.append(
+        Metric(
+            "genre_contracts",
+            10,
+            round(contract_score, 2),
+            "all contracts met" if not contract_failed else f"failed: {', '.join(check.name for check in contract_failed)}",
+        )
+    )
+
+    cognitive_checks = evaluate_cognitive_dimensions(case, candidate, cw_artifact)
+    metrics.append(metric_from_checks("cognitive_dimensions", 15, cognitive_checks, "K/P/A targets met"))
+
+    artifact_checks = validate_cw_artifact(cw_artifact)
+    metrics.append(metric_from_checks("cw_artifact", 10, artifact_checks, "cw artifact complete"))
+
+    module_checks = evaluate_module_coverage(cw_artifact)
+    metrics.append(metric_from_checks("module_coverage", 10, module_checks, "module spec coverage present"))
+
+    trace_payload = load_trace_if_present(candidate_path) if candidate_path is not None else None
+    trace_checks = validate_trace_payload(trace_payload)
+    metrics.append(metric_from_checks("trace_completeness", 5, trace_checks, "trace present"))
+
     total = sum(metric.earned for metric in metrics)
     max_score = sum(metric.points for metric in metrics)
     return CaseReport(case_id=case["id"], mode=mode, score=round(total, 2), max_score=max_score, metrics=metrics)
@@ -122,6 +168,8 @@ Rewrite requirements:
 - Strengthen with details such as: {", ".join(case["strengthen_with_any"])}
 - Avoid these phrases: {", ".join(case["avoid_phrases"])}
 - Reduce these weak patterns if present: {", ".join(case["reduce_phrases"])}
+- Satisfy these genre contracts: {", ".join(contract["name"] for contract in case.get("genre_contracts", []))}
+- Emit a CW artifact with baseline, architecture, modules, trace, unit tests, integration, and rollback.
 
 Instructions:
 Rewrite the draft for authored quality.
@@ -137,16 +185,18 @@ def evaluate_cases(cases: list[dict], mode: str, candidate_dir: Path | None = No
     reports: list[CaseReport] = []
     for case in cases:
         if mode == "gold":
-            candidate = read(GOLD_DIR / f"{case['id']}.md")
+            candidate_path = GOLD_DIR / f"{case['id']}.md"
+            candidate = read(candidate_path)
         elif mode == "input":
             candidate = case["input_text"]
+            candidate_path = None
         elif mode == "candidate":
             assert candidate_dir is not None
             candidate_path = candidate_dir / f"{case['id']}.md"
             candidate = read(candidate_path)
         else:
             raise ValueError(f"Unsupported mode: {mode}")
-        reports.append(score_case(case, candidate, mode))
+        reports.append(score_case(case, candidate, mode, candidate_path))
     return reports
 
 
@@ -182,6 +232,7 @@ def main() -> int:
         out_dir.mkdir(parents=True, exist_ok=True)
         for case in cases:
             (out_dir / f"{case['id']}.md").write_text(render_prompt_packet(case), encoding="utf-8")
+            (out_dir / f"{case['id']}.cw.json").write_text(json.dumps(build_default_cw_artifact(case), indent=2), encoding="utf-8")
         print(f"Wrote prompt packets to {out_dir}")
         return 0
 

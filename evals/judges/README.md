@@ -22,6 +22,8 @@ It supports:
 
 - pairwise comparison of two candidate runs
 - structured JSON outputs
+- trace-aware process QA
+- cognitive-artifact QA
 - machine-readable summaries
 - aggregation across all benchmark cases
 
@@ -95,5 +97,11 @@ Each case should return JSON with:
 - `strengths_right`
 - `risks_left`
 - `risks_right`
+- `trace_winner`
+- `trace_notes_left`
+- `trace_notes_right`
+- `cognitive_winner`
+- `cognitive_notes_left`
+- `cognitive_notes_right`
 
-This lets the judge layer stay structured and automatable without depending on an external API.
+This lets the judge layer stay structured and automatable without depending on an external API, while still checking whether the writing came from a disciplined harness process rather than a lucky one-shot.

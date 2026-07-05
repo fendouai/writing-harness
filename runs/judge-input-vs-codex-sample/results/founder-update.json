@@ -19,5 +19,21 @@
   ],
   "risks_right": [
     "The supporting evidence is still compact rather than fully detailed"
+  ],
+  "trace_winner": "right",
+  "trace_notes_left": [
+    "No trace sidecar is provided for the left baseline."
+  ],
+  "trace_notes_right": [
+    "Right candidate includes a complete trace with diagnosis and next-move planning.",
+    "The trace explains why the rewrite shifts from optimism to observed tension."
+  ],
+  "cognitive_winner": "right",
+  "cognitive_notes_left": [
+    "Left candidate has no cognitive baseline or module-level process record."
+  ],
+  "cognitive_notes_right": [
+    "Right candidate includes a full CW artifact with baseline displacement and module sequencing.",
+    "The process makes the shift from polished update to decision-focused update inspectable."
   ]
 }

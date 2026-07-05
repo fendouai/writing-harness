@@ -19,5 +19,21 @@
   ],
   "risks_right": [
     "Could mention one more concrete workflow step"
+  ],
+  "trace_winner": "right",
+  "trace_notes_left": [
+    "No trace sidecar is provided for the left baseline."
+  ],
+  "trace_notes_right": [
+    "Right candidate includes a full spec -> diagnose -> rewrite -> evaluate trace.",
+    "The trace shows an operator-focused rewrite plan rather than a one-shot cleanup."
+  ],
+  "cognitive_winner": "right",
+  "cognitive_notes_left": [
+    "Left candidate has no baseline, module spec, or rollback-ready cognitive artifact."
+  ],
+  "cognitive_notes_right": [
+    "Right candidate includes a full CW artifact with baseline, AEH architecture, modules, tests, and rollback metadata.",
+    "The process shows deliberate cognitive reframing rather than cosmetic copy polishing."
   ]
 }

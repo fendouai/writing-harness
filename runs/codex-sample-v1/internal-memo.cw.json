@@ -1,0 +1,49 @@
+{
+  "baseline": {
+    "reader": "engineering leadership",
+    "starting_state": {
+      "K": "Reader sees multiple documentation options but lacks a boundary for choosing.",
+      "P": "Reader defaults to balance instead of a source-of-truth decision rule.",
+      "A": {"emotion": "cautious", "resistance": 6, "attribution": "mixed"}
+    },
+    "target_state": {
+      "K": "Reader understands why repo-local docs are the stronger system of record.",
+      "P": "Reader can choose based on version control and discoverability.",
+      "A": {"emotion": "decisive", "resistance": 3, "attribution": "internal"}
+    },
+    "displacement": {
+      "K": "Shift from generic tradeoff framing to a source-of-truth distinction.",
+      "P": "Shift from list-making to recommendation logic.",
+      "A": "Shift from caution to owned decision."
+    }
+  },
+  "architecture": {
+    "pattern": "AEH",
+    "layers": {
+      "assert": "Acknowledge that both Notion and Markdown are familiar options.",
+      "exception": "Break the balance by naming the source-of-truth requirement.",
+      "handler": "Install the repository-first recommendation.",
+      "log": "Leave a repeatable rule for future documentation choices."
+    }
+  },
+  "modules": [
+    {"id": "M-01", "name": "old-belief-index", "ksa_targets": ["K", "A"], "input_state": "Balanced option list", "logic": ["Name the current balanced framing."], "output_state": "Reader sees the non-decision", "interface_hook": "The real question is what system can be trusted as the source of truth."},
+    {"id": "M-02", "name": "expectation-break", "ksa_targets": ["K", "A"], "input_state": "Balanced framing is visible", "logic": ["Show why familiarity is not the same as reliability."], "output_state": "Need for a decision rule is visible", "interface_hook": "That rule should favor versioned docs."},
+    {"id": "M-03", "name": "new-framework", "ksa_targets": ["K", "P"], "input_state": "Need for a decision rule", "logic": ["Recommend the repository for source-of-truth docs."], "output_state": "Recommendation is installed", "interface_hook": "The remaining question is how to keep collaboration light."},
+    {"id": "M-04", "name": "boundary-and-timing-anchor", "ksa_targets": ["P", "A"], "input_state": "Recommendation is installed", "logic": ["Separate source-of-truth docs from lighter collaboration surfaces."], "output_state": "Boundary is clear", "interface_hook": "With that split, the recommendation feels practical instead of rigid."},
+    {"id": "M-05", "name": "identity-embed", "ksa_targets": ["A", "P"], "input_state": "Boundary is clear", "logic": ["End with a rule leadership can repeat."], "output_state": "Decision is easier to defend", "interface_hook": "Done."}
+  ],
+  "trace": {
+    "spec": {"reader": "engineering leadership", "objective": "Turn a balanced memo into a recommendation with source-of-truth logic.", "must_preserve": ["engineering handbook", "runbooks", "Notion", "Markdown"], "must_avoid": ["several valid options", "offer benefits", "consider tradeoffs carefully"]},
+    "diagnose": {"failure_modes": ["false_balance", "no_real_thesis", "insightless_summary"], "main_issue": "The memo names tradeoffs but avoids making a decision."},
+    "rewrite": {"central_claim": "The handbook and runbooks should live in the repository because they need version control and a durable source of truth.", "edits": ["State the recommendation early.", "Use source-of-truth and discoverability as the reasoning spine.", "Keep Notion as a secondary collaboration surface rather than the system of record."]},
+    "evaluate": {"self_score": 93, "remaining_risks": ["Could acknowledge one stronger tradeoff if expanded into a longer memo."], "resistance_after": 3}
+  },
+  "unit_tests": {
+    "K": {"passed": true, "notes": ["The recommendation is distinguished from simple option listing."]},
+    "P": {"passed": true, "notes": ["A usable decision rule is explicit."]},
+    "A": {"passed": true, "notes": ["The memo sounds owned rather than evasive."]}
+  },
+  "integration": {"passed": true, "notes": ["Decision logic survives across the whole short memo."]},
+  "rollback": {"failed_dimension": "", "target_modules": [], "notes": ["No rollback required."]}
+}

@@ -1,0 +1,49 @@
+{
+  "baseline": {
+    "reader": "startup team and early investors",
+    "starting_state": {
+      "K": "Reader hears a polished update without a real observation.",
+      "P": "Reader gets generic iteration language rather than a next priority.",
+      "A": {"emotion": "numb", "resistance": 6, "attribution": "external"}
+    },
+    "target_state": {
+      "K": "Reader sees the core funnel problem clearly.",
+      "P": "Reader knows the next move is pricing and onboarding clarity.",
+      "A": {"emotion": "focused", "resistance": 3, "attribution": "internal"}
+    },
+    "displacement": {
+      "K": "Shift from vague progress language to one observed issue.",
+      "P": "Shift from generic iteration to a named next priority.",
+      "A": "Shift from passive update-reading to shared focus."
+    }
+  },
+  "architecture": {
+    "pattern": "AEH",
+    "layers": {
+      "assert": "Acknowledge that the week did include customer conversations and signal.",
+      "exception": "Break the polished surface by naming the real funnel tension.",
+      "handler": "Install the new frame around pricing confusion and onboarding.",
+      "log": "Leave the team with a clear next move."
+    }
+  },
+  "modules": [
+    {"id": "M-01", "name": "old-belief-index", "ksa_targets": ["K", "A"], "input_state": "Polished but empty update", "logic": ["Surface the current optimism language."], "output_state": "Reader sees the lack of observation", "interface_hook": "The useful update starts where the generic one breaks."},
+    {"id": "M-02", "name": "expectation-break", "ksa_targets": ["K", "A"], "input_state": "Lack of observation is visible", "logic": ["Name the pricing confusion tension."], "output_state": "The real problem becomes visible", "interface_hook": "That shifts the team's next priority."},
+    {"id": "M-03", "name": "new-framework", "ksa_targets": ["K", "P"], "input_state": "Real problem is visible", "logic": ["Reframe the update around the funnel signal."], "output_state": "New lens is installed", "interface_hook": "Now the decision is what to do next."},
+    {"id": "M-04", "name": "boundary-and-timing-anchor", "ksa_targets": ["P", "A"], "input_state": "New lens is installed", "logic": ["State the next focus area explicitly."], "output_state": "Priority is anchored", "interface_hook": "That makes the update directional instead of decorative."},
+    {"id": "M-05", "name": "identity-embed", "ksa_targets": ["A", "P"], "input_state": "Priority is anchored", "logic": ["End on an owned operating move."], "output_state": "Team can retell the update as a decision", "interface_hook": "Done."}
+  ],
+  "trace": {
+    "spec": {"reader": "startup team and early investors", "objective": "Make the update sound observed, specific, and decisive.", "must_preserve": ["customer", "onboarding", "pricing"], "must_avoid": ["productive week", "learned a lot", "product direction", "strong opportunities", "iterating thoughtfully"]},
+    "diagnose": {"failure_modes": ["generic_abstraction", "empty_empathy", "speaker_invisible"], "main_issue": "The update gestures at learning but never names the actual problem discovered."},
+    "rewrite": {"central_claim": "The product is landing, but pricing confusion is slowing self-serve conversion and should be the next priority.", "edits": ["Replace broad optimism with one concrete observation from customer conversations.", "Make the pricing and onboarding issue explicit.", "End with the next move instead of a generic commitment to iterate."]},
+    "evaluate": {"self_score": 92, "remaining_risks": ["Evidence is still compact because the format is short."], "resistance_after": 3}
+  },
+  "unit_tests": {
+    "K": {"passed": true, "notes": ["The update names the real issue."]},
+    "P": {"passed": true, "notes": ["The next priority is explicit."]},
+    "A": {"passed": true, "notes": ["The tone moves from polish to ownership."]}
+  },
+  "integration": {"passed": true, "notes": ["The sequence stays coherent from observation to next move."]},
+  "rollback": {"failed_dimension": "", "target_modules": [], "notes": ["No rollback required."]}
+}

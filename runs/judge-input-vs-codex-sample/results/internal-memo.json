@@ -19,5 +19,21 @@
   ],
   "risks_right": [
     "Could acknowledge one stronger tradeoff if expanded"
+  ],
+  "trace_winner": "right",
+  "trace_notes_left": [
+    "No trace sidecar is provided for the left baseline."
+  ],
+  "trace_notes_right": [
+    "Right candidate includes a full decision trace anchored in recommendation logic.",
+    "The trace makes the source-of-truth rationale explicit before rewriting."
+  ],
+  "cognitive_winner": "right",
+  "cognitive_notes_left": [
+    "Left candidate has no cognitive artifact showing how the recommendation would be engineered."
+  ],
+  "cognitive_notes_right": [
+    "Right candidate includes a CW artifact with recommendation-focused baseline, modules, and QA fields.",
+    "The process discipline matches the stronger decision quality in the prose."
   ]
 }

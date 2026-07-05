@@ -1,0 +1,24 @@
+{
+  "spec": {
+    "reader": "finance teams",
+    "objective": "Make the copy sound like it understands month-end close work.",
+    "must_preserve": ["finance teams", "ERP", "spreadsheets"],
+    "must_avoid": ["innovative platform", "empowers", "seamless automation", "world-class visibility", "strategic outcomes"]
+  },
+  "diagnose": {
+    "failure_modes": ["generic_abstraction", "stock_phrase", "speaker_invisible"],
+    "main_issue": "The draft sounds like category marketing instead of close-operations knowledge."
+  },
+  "rewrite": {
+    "central_claim": "Finance teams need fewer month-end checks and clearer approvals, not another dashboard story.",
+    "edits": [
+      "Lead with what finance teams actually need rather than product adjectives.",
+      "Name close workflow details like approvals, ERP checks, and spreadsheets.",
+      "Turn the copy into an operator-facing claim instead of a generic platform description."
+    ]
+  },
+  "evaluate": {
+    "self_score": 89,
+    "remaining_risks": ["Could name one more specific close step for an even sharper operator feel."]
+  }
+}

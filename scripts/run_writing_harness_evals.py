@@ -54,6 +54,11 @@ def artifact_checks() -> list[CheckResult]:
         REF_DIR / "rubric.md",
         REF_DIR / "failure-taxonomy.md",
         REF_DIR / "prompt-templates.md",
+        REF_DIR / "cognitive-baseline.md",
+        REF_DIR / "aeh-architecture.md",
+        REF_DIR / "module-specs.md",
+        REF_DIR / "cognitive-sensors.md",
+        REF_DIR / "rollback-policy.md",
     ]
     for path in required_files:
         results.append(
@@ -87,6 +92,7 @@ def artifact_checks() -> list[CheckResult]:
         "Workflow",
         "Knowledge Loading",
         "Success Condition",
+        "Set the cognitive baseline",
     ]
     ok, missing = contains_all(skill, skill_sections)
     results.append(
@@ -164,7 +170,40 @@ def artifact_checks() -> list[CheckResult]:
         )
     )
 
-    compact_skill = len(skill.splitlines()) <= 220
+    ok, missing = contains_all(
+        "\n".join(
+            refs.get(name, "")
+            for name in [
+                "cognitive-baseline.md",
+                "aeh-architecture.md",
+                "module-specs.md",
+                "cognitive-sensors.md",
+                "rollback-policy.md",
+            ]
+        ),
+        [
+            "K",
+            "P",
+            "A",
+            "Assert",
+            "Exception",
+            "Handler",
+            "Log",
+            "M-01",
+            "M-05",
+            "Rollback Mapping",
+        ],
+    )
+    results.append(
+        CheckResult(
+            suite="artifact",
+            name="cognitive-harness-references",
+            passed=ok,
+            detail="cognitive references present" if ok else f"missing: {', '.join(missing)}",
+        )
+    )
+
+    compact_skill = len(skill.splitlines()) <= 250
     results.append(
         CheckResult(
             suite="artifact",

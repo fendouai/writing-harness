@@ -19,5 +19,21 @@
   ],
   "risks_right": [
     "Could go deeper on implementation detail in a longer piece"
+  ],
+  "trace_winner": "right",
+  "trace_notes_left": [
+    "No trace sidecar is provided for the left baseline."
+  ],
+  "trace_notes_right": [
+    "Right candidate includes a full trace with failure-mode diagnosis and rewrite plan.",
+    "The trace shows the boundary-setting step that led to the stronger recommendation."
+  ],
+  "cognitive_winner": "right",
+  "cognitive_notes_left": [
+    "Left candidate has no baseline, architecture, or rollback-aware process artifact."
+  ],
+  "cognitive_notes_right": [
+    "Right candidate includes a CW artifact that makes the bounded-retry state transition explicit.",
+    "The artifact shows how the final recommendation was engineered through AEH and module discipline."
   ]
 }

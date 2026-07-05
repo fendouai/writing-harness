@@ -1,0 +1,49 @@
+{
+  "baseline": {
+    "reader": "finance teams",
+    "starting_state": {
+      "K": "Reader expects generic B2B software claims.",
+      "P": "Reader evaluates tools through vague efficiency language.",
+      "A": {"emotion": "skeptical", "resistance": 7, "attribution": "external"}
+    },
+    "target_state": {
+      "K": "Reader sees the difference between dashboard language and real close-process knowledge.",
+      "P": "Reader can map the product to close tasks like approvals and reconciliations.",
+      "A": {"emotion": "interested", "resistance": 4, "attribution": "internal"}
+    },
+    "displacement": {
+      "K": "Shift from category marketing to operational understanding.",
+      "P": "Shift from broad evaluation to workflow-level evaluation.",
+      "A": "Shift from suspicion to practical attention."
+    }
+  },
+  "architecture": {
+    "pattern": "AEH",
+    "layers": {
+      "assert": "Acknowledge that finance teams are tired of visibility claims.",
+      "exception": "Break the dashboard frame by naming what teams actually need.",
+      "handler": "Install a workflow-aware close narrative.",
+      "log": "Leave the reader with a believable operator-facing takeaway."
+    }
+  },
+  "modules": [
+    {"id": "M-01", "name": "old-belief-index", "ksa_targets": ["K", "A"], "input_state": "Reader expects B2B fluff", "logic": ["Name what finance teams do not need."], "output_state": "Old framing is surfaced", "interface_hook": "The real job is buried in the close process."},
+    {"id": "M-02", "name": "expectation-break", "ksa_targets": ["K", "A"], "input_state": "Old framing is surfaced", "logic": ["Contrast visibility claims with operational pain."], "output_state": "Generic pitch loses force", "interface_hook": "So the copy has to prove operational literacy."},
+    {"id": "M-03", "name": "new-framework", "ksa_targets": ["K", "P"], "input_state": "Generic pitch loses force", "logic": ["Reframe the product around close tasks."], "output_state": "New lens is installed", "interface_hook": "That lens only works if the details feel lived-in."},
+    {"id": "M-04", "name": "boundary-and-timing-anchor", "ksa_targets": ["P", "A"], "input_state": "New lens is installed", "logic": ["Name spreadsheets, ERP checks, approvals, and month-end."], "output_state": "Workflow feels concrete", "interface_hook": "Now the claim can land without hype."},
+    {"id": "M-05", "name": "identity-embed", "ksa_targets": ["A", "P"], "input_state": "Workflow feels concrete", "logic": ["End on the operator's perspective."], "output_state": "Reader can repeat the value in their own workflow terms", "interface_hook": "Done."}
+  ],
+  "trace": {
+    "spec": {"reader": "finance teams", "objective": "Make the copy sound like it understands month-end close work.", "must_preserve": ["finance teams", "ERP", "spreadsheets"], "must_avoid": ["innovative platform", "empowers", "seamless automation", "world-class visibility", "strategic outcomes"]},
+    "diagnose": {"failure_modes": ["generic_abstraction", "stock_phrase", "speaker_invisible"], "main_issue": "The draft sounds like category marketing instead of close-operations knowledge."},
+    "rewrite": {"central_claim": "Finance teams need fewer month-end checks and clearer approvals, not another dashboard story.", "edits": ["Lead with what finance teams actually need rather than product adjectives.", "Name close workflow details like approvals, ERP checks, and spreadsheets.", "Turn the copy into an operator-facing claim instead of a generic platform description."]},
+    "evaluate": {"self_score": 89, "remaining_risks": ["Could name one more specific close step for an even sharper operator feel."], "resistance_after": 4}
+  },
+  "unit_tests": {
+    "K": {"passed": true, "notes": ["The contrast between hype and workflow is clear."]},
+    "P": {"passed": true, "notes": ["The copy names close-process cues."]},
+    "A": {"passed": true, "notes": ["The tone moves from hype to operator credibility."]}
+  },
+  "integration": {"passed": true, "notes": ["The sequence moves cleanly from old frame to believable task fit."]},
+  "rollback": {"failed_dimension": "", "target_modules": [], "notes": ["No rollback required."]}
+}

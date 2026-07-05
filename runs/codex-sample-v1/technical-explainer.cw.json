@@ -1,0 +1,49 @@
+{
+  "baseline": {
+    "reader": "backend engineers",
+    "starting_state": {
+      "K": "Retries are seen as a generic reliability best practice.",
+      "P": "Teams may retry broadly without a decision rule.",
+      "A": {"emotion": "overconfident", "resistance": 6, "attribution": "external"}
+    },
+    "target_state": {
+      "K": "Reader understands that retries help only under bounded conditions.",
+      "P": "Reader can apply a selective retry rule using backoff and idempotency.",
+      "A": {"emotion": "calibrated", "resistance": 3, "attribution": "internal"}
+    },
+    "displacement": {
+      "K": "Move from generic reliability advice to bounded retry logic.",
+      "P": "Move from blanket retries to conditional retries.",
+      "A": "Move from passive best-practice language to deliberate control."
+    }
+  },
+  "architecture": {
+    "pattern": "AEH",
+    "layers": {
+      "assert": "Acknowledge that retries are commonly treated as a reliability default.",
+      "exception": "Show that blind retries can amplify failure.",
+      "handler": "Install a selective retry model with backoff and idempotency.",
+      "log": "Leave a compact rule the reader can repeat."
+    }
+  },
+  "modules": [
+    {"id": "M-01", "name": "old-belief-index", "ksa_targets": ["K", "A"], "input_state": "Generic retry optimism", "logic": ["Name the common belief."], "output_state": "Belief is visible", "interface_hook": "That default breaks under real failure modes."},
+    {"id": "M-02", "name": "expectation-break", "ksa_targets": ["K", "A"], "input_state": "Belief is visible", "logic": ["Contrast safe retries with harmful retries."], "output_state": "Old model loses certainty", "interface_hook": "So the useful question is not whether to retry, but what to retry."},
+    {"id": "M-03", "name": "new-framework", "ksa_targets": ["K", "P"], "input_state": "Need a better model", "logic": ["Give a selective rule with examples."], "output_state": "New decision rule installed", "interface_hook": "That rule matters only if it survives implementation detail."},
+    {"id": "M-04", "name": "boundary-and-timing-anchor", "ksa_targets": ["P", "A"], "input_state": "Decision rule installed", "logic": ["Name boundary conditions like timeout, 429, and idempotency."], "output_state": "Reader knows where the rule applies", "interface_hook": "Once those limits are clear, the recommendation sticks."},
+    {"id": "M-05", "name": "identity-embed", "ksa_targets": ["A", "P"], "input_state": "Rule is bounded", "logic": ["End with a repeatable operating principle."], "output_state": "Reader can restate the guidance", "interface_hook": "Done."}
+  ],
+  "trace": {
+    "spec": {"reader": "backend engineers", "objective": "Explain when retries improve reliability without sounding generic.", "must_preserve": ["retries", "reliability"], "must_avoid": ["it is important to note", "in today's fast-paced", "seamless user experience"]},
+    "diagnose": {"failure_modes": ["generic_abstraction", "false_balance", "stock_phrase"], "main_issue": "The draft says retries matter but never explains where they help or where they backfire."},
+    "rewrite": {"central_claim": "Retries help only when they are selective and paired with backoff and idempotency discipline.", "edits": ["Replace generic framing with concrete transient failures.", "Add a recommendation about what to retry and what not to retry.", "Introduce idempotency as the practical boundary."]},
+    "evaluate": {"self_score": 91, "remaining_risks": ["Could add one more implementation example in a longer version."], "resistance_after": 3}
+  },
+  "unit_tests": {
+    "K": {"passed": true, "notes": ["Boundary conditions are explicit."]},
+    "P": {"passed": true, "notes": ["Selective retry rule is present."]},
+    "A": {"passed": true, "notes": ["Language is controlled rather than passive."]}
+  },
+  "integration": {"passed": true, "notes": ["AEH flow holds from misconception to recommendation."]},
+  "rollback": {"failed_dimension": "", "target_modules": [], "notes": ["No rollback required."]}
+}

@@ -23,7 +23,7 @@ Use this runbook in a single agent session.
 
 ## Goal
 
-Process every benchmark packet with the Writing Harness skill and write one final rewrite per case.
+Process every benchmark packet with the Writing Harness skill and write one final rewrite plus one cognitive artifact package per case.
 
 ## Session Files
 
@@ -40,6 +40,8 @@ Process every benchmark packet with the Writing Harness skill and write one fina
    - read the case instructions
    - produce one final rewrite
    - write the final text to the requested result file
+   - write the requested trace JSON sidecar
+   - write the requested CW artifact JSON sidecar
 5. Do not skip cases.
 6. Do not write commentary into the result files.
 7. After finishing all cases, stop and report completion.
@@ -49,7 +51,7 @@ Process every benchmark packet with the Writing Harness skill and write one fina
 Use the Writing Harness skill and complete the benchmark session described in:
 {session_dir / "RUNBOOK.md"}
 
-Make sure every packet in {session_dir / "packets"} is processed and every output is written into {session_dir / "results"}.
+Make sure every packet in {session_dir / "packets"} is processed and every rewrite, trace file, and CW artifact is written into {session_dir / "results"}.
 """
 
 
@@ -74,6 +76,7 @@ Process every judge packet and write one valid JSON judgment per case.
 2. Process every packet in the packets directory.
 3. For each packet:
    - compare LEFT vs RIGHT
+   - evaluate the writing result, the trace quality, and the cognitive artifact quality
    - produce valid JSON with the required keys
    - write the JSON to the requested result file
 4. Do not skip cases.

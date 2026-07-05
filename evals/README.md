@@ -140,12 +140,18 @@ The benchmark suite extends this system from harness integrity to end-to-end rew
 
 It adds:
 
+- a writing-lint layer
+- cognitive baseline and architecture artifacts
 - realistic rewrite tasks
 - gold outputs
 - a deterministic scorer
 - candidate directory evaluation
 - prompt-packet generation for model runs
 - agent-native benchmark packets
+- genre contracts per case
 - agent-native pairwise judge packets
+- trace-aware QA for process discipline
+- K/P/A sensor checks
+- rollback-oriented process QA
 
 See [`evals/benchmarks/README.md`](/Users/f/GitHub/writing-harness/evals/benchmarks/README.md).
