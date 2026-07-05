@@ -56,7 +56,7 @@ def main() -> int:
         results = [lint_path(Path(args.path))]
     elif args.cw_json:
         cw_path = Path(args.cw_json)
-        if cw_path.is_dir():
+        if cw_path.exists() and cw_path.is_dir():
             results = [lint_cw_path(path) for path in sorted(cw_path.glob("*.cw.json"))]
         else:
             results = [lint_cw_path(cw_path)]

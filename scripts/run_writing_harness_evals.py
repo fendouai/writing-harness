@@ -59,6 +59,9 @@ def artifact_checks() -> list[CheckResult]:
         REF_DIR / "module-specs.md",
         REF_DIR / "cognitive-sensors.md",
         REF_DIR / "rollback-policy.md",
+        REF_DIR / "cta-playbook.md",
+        REF_DIR / "aeh-cta-bridge.md",
+        REF_DIR / "mode-selection.md",
     ]
     for path in required_files:
         results.append(
@@ -72,9 +75,11 @@ def artifact_checks() -> list[CheckResult]:
 
     readme_sections = [
         "Agent = Model + Writing Harness",
-        "Guides and Sensors",
+        "The One Spine",
+        "The Core Architecture",
+        "How The System Runs",
+        "Light vs Heavy Use",
         "Repository Knowledge as the System of Record",
-        "The Four Layers of the Harness",
         "Harness Design Principles",
     ]
     ok, missing = contains_all(readme, readme_sections)
@@ -179,6 +184,9 @@ def artifact_checks() -> list[CheckResult]:
                 "module-specs.md",
                 "cognitive-sensors.md",
                 "rollback-policy.md",
+                "cta-playbook.md",
+                "aeh-cta-bridge.md",
+                "mode-selection.md",
             ]
         ),
         [
@@ -192,6 +200,12 @@ def artifact_checks() -> list[CheckResult]:
             "M-01",
             "M-05",
             "Rollback Mapping",
+            "critical incident",
+            "GOMS",
+            "retell bullets",
+            "AEH decides the route",
+            "Light rewrite",
+            "CTA surgery",
         ],
     )
     results.append(

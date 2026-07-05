@@ -37,6 +37,14 @@ What it does not yet fully encode is the deeper systems model from the whitepape
 - unit-test style verification by module and by cognitive dimension
 - rollback advice tied to the failed dimension
 
+This round also adds a CTA layer:
+
+- think-aloud extraction of reader defaults
+- critical-incident framing for expectation breaks
+- GOMS-style decomposition for executable methods
+- milestone rehearsal for temporal anchoring
+- rebuttal rehearsal for identity transfer
+
 This upgrade fills those gaps while preserving the existing practical style of the repository.
 
 ## Design Principles
@@ -57,6 +65,7 @@ A candidate rewrite is stronger when it is accompanied by a credible:
 - module plan
 - rewrite trace
 - self-evaluation
+- CTA elicitation payload
 
 ### 4. Keep the entrypoint compact
 

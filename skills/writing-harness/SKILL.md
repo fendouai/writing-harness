@@ -89,6 +89,8 @@ If the task is trying to change the reader's mind, define the reader's K/P/A sta
 
 Use `references/cognitive-baseline.md`.
 
+If the reader's starting state and target state are not defined, do not proceed to body drafting.
+
 ### 3. Identify the central claim
 
 Before editing line by line, state:
@@ -123,6 +125,11 @@ Use:
 
 - `references/aeh-architecture.md`
 - `references/module-specs.md`
+- `references/cta-playbook.md`
+
+Before drafting, load the CTA layer when the task requires reader belief change, not just clarity improvement.
+
+If the task needs reader reframing and you do not have an architecture plus module path, do not continue.
 
 ### 6. Rewrite for authored quality
 
@@ -155,6 +162,12 @@ If the result is still generic, over-explained, or low-judgment, continue the lo
 
 Do not stop at a smoother version of the same weak draft.
 
+If a cognitive dimension fails:
+
+- `K` -> revisit `M-01` and `M-02`
+- `P` -> revisit `M-03`
+- `A` -> revisit `M-04` and `M-05`
+
 ## Rewrite Rules
 
 - Cut generic sentences that could fit almost any article
@@ -177,7 +190,7 @@ Load only what is needed:
   For diagnosis.
 - `references/prompt-templates.md`
   For reusable prompts and harness setup.
-- `references/cognitive-baseline.md`, `references/aeh-architecture.md`, `references/module-specs.md`, `references/cognitive-sensors.md`, `references/rollback-policy.md`
+- `references/cognitive-baseline.md`, `references/aeh-architecture.md`, `references/module-specs.md`, `references/cognitive-sensors.md`, `references/rollback-policy.md`, `references/cta-playbook.md`, `references/aeh-cta-bridge.md`, `references/mode-selection.md`
   For cognitive-state transition work, module QA, and rollback design.
 
 Keep the skill compact. Pull deeper detail from references instead of expanding this file into a monolith.

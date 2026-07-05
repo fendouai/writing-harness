@@ -31,6 +31,7 @@ Most "humanize AI text" advice aims too low. It focuses on surface cleanup. Writ
 - A reusable `writing-harness` skill for authored-quality rewrites.
 - A `writing-lint` layer for catching stock AI phrasing, weak openings, weak endings, and missing claims.
 - A cognitive-writing layer for baseline reports, AEH architecture, module specs, and rollback-aware QA.
+- A CTA-enhanced layer for extracting expert heuristics, critical incidents, GOMS-style procedures, milestone rehearsal, and identity rehearsal.
 - A deterministic benchmark suite for regression testing.
 - An agent-native judge workflow for pairwise comparisons and trace-aware QA.
 - A repository structure that separates guides, sensors, and evaluation artifacts.
@@ -141,27 +142,45 @@ In the upgraded cognitive-writing model, that process is explicit:
 
 That means this repository is not just a set of prompts. It is a control system for authored text.
 
-## What This Repository Contains
+## The One Spine
 
-This repository has four main parts:
+Everything in this repository hangs off one architecture spine:
 
-1. `README.md`
-   The guide and operating philosophy.
-2. [`skills/writing-harness/SKILL.md`](skills/writing-harness/SKILL.md)
-   The reusable agent skill.
-3. [`skills/writing-harness/references/`](skills/writing-harness/references/)
-   The durable system of record for workflows, sensors, cognitive baselines, architecture, and rollback rules.
-4. [`evals/`](evals/)
-   Deterministic checks, benchmarks, judge workflows, and reports.
+1. `Baseline`
+   Define how the reader thinks now.
+2. `Architecture`
+   Choose the cognitive path. Default: `Assert -> Exception -> Handler -> Log`.
+3. `Modules`
+   Break the path into `M-01` through `M-05`.
+4. `CTA`
+   Extract the hidden expert moves inside each module.
+5. `Draft`
+   Generate the text.
+6. `Sensors`
+   Check whether the cognitive move actually happened.
+7. `Rollback`
+   If a dimension fails, fix only the failed layer.
 
-Examples and worked articles live under [`docs/examples/`](docs/examples/).
+If you remember only one line, remember this:
 
-This follows a harness-first documentation rule:
+> Baseline -> Architecture -> Modules -> CTA -> Draft -> Sensors -> Rollback
 
-> The entrypoint should be short enough to steer the agent.
-> The system of record should be structured enough to teach the agent what to do next.
+Everything else in the repository exists to support one of those seven steps.
 
-## Why "Sound More Human" Is Too Weak
+```mermaid
+flowchart LR
+    A["Baseline"] --> B["Architecture<br/>AEH route"]
+    B --> C["Modules<br/>M-01 to M-05"]
+    C --> D["CTA<br/>expert move extraction"]
+    D --> E["Draft"]
+    E --> F["Sensors<br/>lint, K/P/A, contracts, QA"]
+    F --> G{"Pass?"}
+    G -- "Yes" --> H["Accept"]
+    G -- "No" --> I["Rollback"]
+    I --> C
+```
+
+## Why This Exists
 
 "Sound more human" is a style objective. It is not a quality objective.
 
@@ -189,6 +208,170 @@ This project therefore optimizes for:
 - selective, not uniformly balanced
 - grounded, not abstract by default
 
+## What This Repository Contains
+
+This repository has four main parts:
+
+1. `README.md`
+   The guide and operating philosophy.
+2. [`skills/writing-harness/SKILL.md`](skills/writing-harness/SKILL.md)
+   The reusable agent skill.
+3. [`skills/writing-harness/references/`](skills/writing-harness/references/)
+   The durable system of record for workflows, baselines, architecture, CTA execution, sensors, mode selection, and rollback rules.
+4. [`evals/`](evals/)
+   Deterministic checks, benchmarks, judge workflows, and reports.
+
+Examples and worked articles live under [`docs/examples/`](docs/examples/).
+
+## The Core Architecture
+
+The harness uses one macro path and one micro engine.
+
+### Macro Path: AEH
+
+`AEH` is the macro cognitive route:
+
+- `Assert`
+  Index the reader's current belief and reduce defensiveness.
+- `Exception`
+  Break the old frame with contradiction, evidence, or a failed decision rule.
+- `Handler`
+  Install the new model, tool, or judgment rule.
+- `Log`
+  Lock the change in with memory, identity, or next-action cues.
+
+### Execution Containers: M-01 to M-05
+
+`M-01` to `M-05` are the concrete execution containers:
+
+- `M-01 old-belief-index`
+- `M-02 expectation-break`
+- `M-03 new-framework`
+- `M-04 boundary-and-timing-anchor`
+- `M-05 identity-embed`
+
+These modules are not a second competing architecture.
+
+They are how the AEH path becomes writable and testable.
+
+### Micro Engine: CTA
+
+`CTA` is the micro elicitation engine inside the modules.
+
+It extracts:
+
+- reader default heuristics
+- critical incidents
+- decision-switch parameters
+- executable procedures
+- milestone rehearsal
+- rebuttal and identity rehearsal
+
+In one line:
+
+- `AEH` decides the route
+- `M-01..M-05` hold the work
+- `CTA` sharpens the internal moves
+
+See [`skills/writing-harness/references/aeh-cta-bridge.md`](skills/writing-harness/references/aeh-cta-bridge.md).
+
+## How The System Runs
+
+This repository treats writing like a staged cognitive system, not a one-shot prompt.
+
+### 1. Baseline
+
+Before drafting, define:
+
+- who the reader is
+- what they currently believe
+- what bad process they currently use
+- what attitude or resistance they currently carry
+
+If the baseline is weak, the draft will drift.
+
+### 2. Architecture
+
+Choose the cognitive route.
+
+Default:
+
+- `Assert -> Exception -> Handler -> Log`
+
+If the task is pure cleanup, you may not need the full route.
+If the task is belief change, you almost certainly do.
+
+### 3. Modules
+
+Translate the route into five explicit modules with:
+
+- input state
+- output state
+- logic steps
+- interface hook
+
+If the modules are vague, the prose will look polished but the cognition will stay loose.
+
+### 4. CTA
+
+Inside each module, extract the expert move:
+
+- what signal the expert notices
+- what wrong default they reject
+- what decision rule they use instead
+- how the reader can rehearse the new move
+
+This is where the system stops being explanatory and starts becoming procedural.
+
+### 5. Draft
+
+Write only after the earlier layers are specified.
+
+The draft is not the first step.
+The draft is the fifth step.
+
+### 6. Sensors
+
+Run mechanical checks on the result.
+
+This repository uses sensors such as:
+
+- writing lint
+- failure taxonomy
+- genre contracts
+- K/P/A checks
+- trace-aware QA
+- CW artifact validation
+
+### 7. Rollback
+
+If the output fails, do not restart blindly.
+
+Rollback by failed dimension:
+
+- `K` failure -> revisit `M-01` and `M-02`
+- `P` failure -> revisit `M-03`
+- `A` failure -> revisit `M-04` and `M-05`
+
+## Light vs Heavy Use
+
+Not every task needs cognitive surgery.
+
+Use the decision table here:
+
+- [`skills/writing-harness/references/mode-selection.md`](skills/writing-harness/references/mode-selection.md)
+
+Short version:
+
+- `Light rewrite`
+  Cleanup, compression, tone repair
+- `Editorial rewrite`
+  Better thesis, structure, specificity
+- `Cognitive rewrite`
+  Reader judgment or interpretation must change
+- `CTA surgery`
+  High-resistance persuasion or expert-decision transfer
+
 ## What Makes AI Writing Feel AI-Generated
 
 AI-generated text usually feels artificial for structural reasons, not grammatical ones.
@@ -212,54 +395,6 @@ Common failure patterns:
 
 These are not just style flaws. They are signals that the writing lacks authorship.
 
-## The Writing Harness Model
-
-This project treats writing quality the way software teams treat system quality:
-
-- define what the output must do
-- encode useful defaults
-- validate the result
-- label failure modes
-- iterate with a feedback loop
-
-That is what "writing harness" means here.
-
-## Guides and Sensors
-
-The harness is split into two categories.
-
-### Guides
-
-Guides shape generation and revision.
-
-In this repository, the guides are:
-
-- the writing spec
-- the cognitive baseline
-- the AEH architecture
-- the module spec
-- the rewrite workflow
-- the prompting templates
-- the skill instructions
-
-### Sensors
-
-Sensors evaluate whether the output is good enough.
-
-In this repository, the sensors are:
-
-- the writing rubric
-- the failure taxonomy
-- the meta checks for genericity and authorship
-- the writing-lint checks
-- the genre contracts in benchmark cases
-- the trace-aware QA checks in judge packets
-
-This distinction matters.
-
-Without guides, the model drifts.
-Without sensors, the team confuses fluency with quality.
-
 ## Repository Knowledge as the System of Record
 
 A harness should not hide its standards in one long instruction blob.
@@ -276,94 +411,12 @@ If you want the pattern in one line:
 
 > Short entrypoint. Structured references. Mechanical evaluation.
 
-If you want the operating model in one line:
+This is the documentation equivalent of the architecture spine above:
 
-> Spec, rewrite, lint, benchmark, judge, trace.
-
-If you want the cognitive-systems model in one line:
-
-> Baseline, architecture, modules, draft, unit test, integration, rollback.
-
-## The Four Layers of the Harness
-
-### 1. Spec
-
-Before drafting or rewriting, define:
-
-- who the reader is
-- what the reader already knows
-- what the piece is trying to do
-- what must be emphasized
-- what must be avoided
-- what level of conviction is appropriate
-
-If the spec is weak, the draft will drift toward generic competence.
-
-### 2. Draft
-
-Do not start with "write an article."
-
-First force:
-
-- a central claim
-- 3-5 concrete observations
-- at least one tradeoff, limit, or counterpoint
-- a clear sense of priority
-
-Then draft.
-
-### 3. Editorial QA
-
-Treat the draft like something to debug.
-
-Check for:
-
-- generic abstraction
-- empty setup
-- false balance
-- stock phrasing
-- repeated points
-- padded conclusions
-- uniform rhythm
-- invisible speaker
-
-### 4. Evaluation
-
-Score the result using writing-quality criteria, not detector anxiety.
-
-Core dimensions:
-
-- Clarity of purpose
-- Audience specificity
-- Point of view
-- Specificity
-- Insight density
-- Structural focus
-- Voice credibility
-- Reader usefulness
-- Trustworthiness
-- Memorability
-
-## A Practical Rewrite Loop
-
-Use this loop when revising AI-generated text:
-
-1. Define the job.
-   What is the text supposed to do?
-2. Define the reader.
-   Who is this for, and what do they need?
-3. Extract the thesis.
-   What is the real point?
-4. Tag the failure modes.
-   What exactly is weak?
-5. Rewrite the logic.
-   Improve the meaning before polishing the wording.
-6. Rewrite the language.
-   Increase specificity, judgment, and rhythm.
-7. Score the result.
-   Use the rubric and meta checks.
-8. Iterate if needed.
-   Do not stop at a merely smoother version of a weak draft.
+- `README` explains the system
+- `SKILL.md` enforces the operating contract
+- `references/` hold the durable playbooks
+- `evals/` and `scripts/` validate the outputs
 
 ## What This Harness Optimizes For
 

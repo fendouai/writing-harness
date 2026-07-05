@@ -11,6 +11,8 @@ Use these to check whether the draft is creating a real cognitive state transiti
   - `different from`
 - observable action verbs
 - concrete boundary conditions
+- quoted reader heuristics or named old frames in `M-01`
+- explicit collapse point for the old logic in `M-02`
 
 ## P Sensors
 
@@ -20,6 +22,8 @@ Use these to check whether the draft is creating a real cognitive state transiti
   - blanks
   - checklists
   - templates
+- GOMS-style method steps in `M-03`
+- timeline checkpoints in `M-04`
 
 ## A Sensors
 
@@ -27,6 +31,7 @@ Use these to check whether the draft is creating a real cognitive state transiti
 - passive or victim language falling
 - resistance estimate falling across the draft
 - identity or ownership language appearing near the end
+- rebuttal rehearsal and retell bullets in `M-05`
 
 ## Rule
 

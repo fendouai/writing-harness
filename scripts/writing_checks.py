@@ -124,6 +124,14 @@ DEFAULT_MODULE_NAMES = {
     "M-05": "identity-embed",
 }
 
+CTA_FIELDS_BY_MODULE = {
+    "M-01": ["think_aloud_frames", "heuristics", "default_process_labels"],
+    "M-02": ["critical_incident", "absurd_old_conclusion", "switch_parameter", "collapse_signal"],
+    "M-03": ["goal", "operations", "methods", "selection_rules"],
+    "M-04": ["timeline", "observable_checkpoints", "checklist_template", "downgrade_condition"],
+    "M-05": ["rebuttal_lines", "retell_bullets", "identity_lock_sentence"],
+}
+
 
 @dataclass
 class CheckResult:
@@ -330,15 +338,7 @@ def build_default_cw_artifact(case: dict) -> dict:
             },
         },
         "modules": [
-            {
-                "id": module_id,
-                "name": DEFAULT_MODULE_NAMES[module_id],
-                "ksa_targets": [],
-                "input_state": "",
-                "logic": [],
-                "output_state": "",
-                "interface_hook": "",
-            }
+            build_default_module(module_id)
             for module_id in DEFAULT_MODULE_ORDER
         ],
         "trace": build_default_trace_template(case),
@@ -357,6 +357,59 @@ def build_default_cw_artifact(case: dict) -> dict:
             "notes": [],
         },
     }
+
+
+def build_default_module(module_id: str) -> dict:
+    base = {
+        "id": module_id,
+        "name": DEFAULT_MODULE_NAMES[module_id],
+        "ksa_targets": [],
+        "input_state": "",
+        "logic": [],
+        "output_state": "",
+        "interface_hook": "",
+        "cta_focus": "",
+        "cta": {},
+    }
+    if module_id == "M-01":
+        base["cta_focus"] = "think-aloud extraction of reader defaults"
+        base["cta"] = {
+            "think_aloud_frames": [],
+            "heuristics": [],
+            "default_process_labels": [],
+        }
+    elif module_id == "M-02":
+        base["cta_focus"] = "critical incident and collapse-point extraction"
+        base["cta"] = {
+            "critical_incident": "",
+            "absurd_old_conclusion": "",
+            "switch_parameter": "",
+            "collapse_signal": "",
+        }
+    elif module_id == "M-03":
+        base["cta_focus"] = "GOMS-style executable method encoding"
+        base["cta"] = {
+            "goal": "",
+            "operations": [],
+            "methods": [],
+            "selection_rules": [],
+        }
+    elif module_id == "M-04":
+        base["cta_focus"] = "milestone rehearsal and temporal anchoring"
+        base["cta"] = {
+            "timeline": {"now": "", "soon": "", "later": ""},
+            "observable_checkpoints": [],
+            "checklist_template": "",
+            "downgrade_condition": "",
+        }
+    elif module_id == "M-05":
+        base["cta_focus"] = "rebuttal rehearsal and identity transfer"
+        base["cta"] = {
+            "rebuttal_lines": [],
+            "retell_bullets": [],
+            "identity_lock_sentence": "",
+        }
+    return base
 
 
 def cw_artifact_path_for_candidate(candidate_path: Path) -> Path:
@@ -509,6 +562,33 @@ def validate_cw_artifact(cw_artifact: dict | None) -> list[CheckResult]:
                 severity="error",
             )
         )
+        module = next((item for item in modules if isinstance(item, dict) and item.get("id") == module_id), {})
+        checks.append(
+            CheckResult(
+                name=f"cw_module_cta_focus:{module_id}",
+                passed=_boolish(module.get("cta_focus")),
+                detail="present" if _boolish(module.get("cta_focus")) else "missing",
+                severity="warn",
+            )
+        )
+        cta_payload = module.get("cta", {})
+        for field in CTA_FIELDS_BY_MODULE[module_id]:
+            value = cta_payload.get(field)
+            field_ok = _boolish(value)
+            if module_id == "M-04" and field == "timeline" and isinstance(value, dict):
+                field_ok = all(_boolish(value.get(key)) for key in ["now", "soon", "later"])
+            if module_id == "M-05" and field in {"rebuttal_lines", "retell_bullets"} and isinstance(value, list):
+                field_ok = len(value) >= 3
+            if module_id == "M-01" and field in {"think_aloud_frames", "heuristics", "default_process_labels"} and isinstance(value, list):
+                field_ok = len(value) >= 1
+            checks.append(
+                CheckResult(
+                    name=f"cw_module_cta:{module_id}:{field}",
+                    passed=field_ok,
+                    detail="present" if field_ok else "missing or too thin",
+                    severity="warn",
+                )
+            )
 
     checks.extend(
         CheckResult(
@@ -552,6 +632,15 @@ def evaluate_module_coverage(cw_artifact: dict | None) -> list[CheckResult]:
                 name=f"module_logic:{module_id}",
                 passed=bool(module.get("logic")) and _boolish(module.get("interface_hook")),
                 detail="logic + interface present" if bool(module.get("logic")) and _boolish(module.get("interface_hook")) else "missing logic or interface",
+                severity="error",
+            )
+        )
+        cta = module.get("cta", {})
+        checks.append(
+            CheckResult(
+                name=f"module_cta_payload:{module_id}",
+                passed=_boolish(cta),
+                detail="cta payload present" if _boolish(cta) else "missing cta payload",
                 severity="error",
             )
         )
