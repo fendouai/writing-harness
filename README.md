@@ -15,7 +15,7 @@ Most "humanize AI text" advice aims too low. It focuses on surface cleanup. Writ
 ![License](https://img.shields.io/badge/license-MIT-10233F?style=flat-square)
 ![Skill](https://img.shields.io/badge/skill-writing--harness-0F9D8A?style=flat-square)
 ![Benchmarks](https://img.shields.io/badge/benchmarks-agent--native-E66A1C?style=flat-square)
-![Status](https://img.shields.io/badge/evals-16%2F16%20passing-1D4F94?style=flat-square)
+![Status](https://img.shields.io/badge/evals-22%2F22%20passing-1D4F94?style=flat-square)
 
 **Use Cases:** rewrite AI drafts • compare prompt variants • benchmark writing quality • evaluate agent output • ship more trustworthy copy faster
 
@@ -73,6 +73,29 @@ Why this feels practical:
 
 These are compact examples from the benchmark set. The shift is the point: less generic optimism, more specific observation and judgment.
 
+## Featured Example
+
+The harness is not only for short rewrites.
+
+It can also structure longer analytical writing with:
+
+- a defined reader
+- a cognitive target
+- an explicit argument
+- a process-aware editorial loop
+
+See the worked English example:
+
+- [`docs/examples/cs249r-book-article.md`](/Users/f/GitHub/writing-harness/docs/examples/cs249r-book-article.md)
+
+This example uses the open-source project [`harvard-edge/cs249r_book`](https://github.com/harvard-edge/cs249r_book) as the subject and shows how the harness can move a reader from:
+
+> "This is a strong textbook repo."
+
+to:
+
+> "This is a deliberately engineered curriculum system."
+
 ## Quick Start
 
 Run the deterministic checks:
@@ -91,6 +114,8 @@ python3 scripts/prepare_agent_native_session.py benchmark --outdir runs/prompt-a
 python3 scripts/check_agent_native_run_status.py --manifest runs/prompt-a/run-manifest.json
 python3 scripts/run_writing_harness_benchmarks.py --candidate-dir runs/prompt-a/results
 ```
+
+If you want to study a full repository-analysis article rather than a compact rewrite, start with the featured example above, then inspect the benchmark and judge layers.
 
 ## Agent = Model + Writing Harness
 
@@ -118,16 +143,18 @@ That means this repository is not just a set of prompts. It is a control system 
 
 ## What This Repository Contains
 
-This repository has two main parts:
+This repository has four main parts:
 
 1. `README.md`
    The guide and operating philosophy.
 2. [`skills/writing-harness/SKILL.md`](/Users/f/GitHub/writing-harness/skills/writing-harness/SKILL.md)
    The reusable agent skill.
+3. [`skills/writing-harness/references/`](/Users/f/GitHub/writing-harness/skills/writing-harness/references/)
+   The durable system of record for workflows, sensors, cognitive baselines, architecture, and rollback rules.
+4. [`evals/`](/Users/f/GitHub/writing-harness/evals/)
+   Deterministic checks, benchmarks, judge workflows, and reports.
 
-It also includes an evaluation layer under [`evals/`](/Users/f/GitHub/writing-harness/evals/), including an end-to-end benchmark suite for testing rewrite quality.
-
-The skill stays intentionally compact. The deeper operational knowledge lives in [`skills/writing-harness/references/`](/Users/f/GitHub/writing-harness/skills/writing-harness/references/).
+Examples and worked articles live under [`docs/examples/`](/Users/f/GitHub/writing-harness/docs/examples/).
 
 This follows a harness-first documentation rule:
 
@@ -405,6 +432,8 @@ This repository is built around five principles:
 
 ```text
 .
+├── docs/
+│   └── examples/
 ├── evals/
 ├── README.md
 ├── scripts/
@@ -412,10 +441,6 @@ This repository is built around five principles:
     └── writing-harness/
         ├── SKILL.md
         └── references/
-            ├── failure-taxonomy.md
-            ├── prompt-templates.md
-            ├── rewrite-workflow.md
-            └── rubric.md
 ```
 
 ## Evaluation and Benchmarking
@@ -431,6 +456,7 @@ Start here:
 
 - [`evals/README.md`](/Users/f/GitHub/writing-harness/evals/README.md)
 - [`evals/benchmarks/README.md`](/Users/f/GitHub/writing-harness/evals/benchmarks/README.md)
+- [`docs/examples/cs249r-book-article.md`](/Users/f/GitHub/writing-harness/docs/examples/cs249r-book-article.md)
 
 ## Sources and Inspiration
 
@@ -453,6 +479,7 @@ This project is useful for:
 - editorial teams using AI
 - founders writing with AI assistance
 - researchers polishing AI drafts
+- technical writers working from source material
 - anyone building a repeatable workflow for better AI writing
 
 ## Philosophy in One Line
